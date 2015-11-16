@@ -15,7 +15,6 @@
 141	"tego co wiem to wówczas obowiązywały >>specyficzne<< praktyki studenckie ? - Zgadza "	adj:pl:nom:f:pos	adj:pl:acc:f:pos
 142	"co wiem to wówczas obowiązywały specyficzne >>praktyki<< studenckie ? - Zgadza się "	subst:pl:nom:f	subst:pl:acc:f
 143	"wiem to wówczas obowiązywały specyficzne praktyki >>studenckie<< ? - Zgadza się . "	adj:pl:nom:f:pos	adj:pl:acc:f:pos
-150	"? - Zgadza się . Wspólnie >>m.in<< . z więźniami wykonywali śmy "	brev:pun	brev:pun
 159	"więźniami wykonywali śmy różne czynności . >>Connex<< ma swoje spółki przede wszystkim "	subst:sg:nom:m3	ign
 179	"i sunęła naprzeciw niego spokojnie i >>pewnie<< . Ale choć deszczowe chmury "	adv:pos	qub:wok,qub:nwok
 188	"choć deszczowe chmury w zawrotnym pędzie >>mknęły<< nad miastem , ani jedna "	praet:pl:f:imperf:nagl,praet:pl:f:imperf:agl	praet:pl:m3:imperf:agl,praet:pl:m3:imperf:nagl
@@ -326,7 +325,6 @@
 2921	"współ-bycie z kimś cierpiącym . Trzymilionowe >>przemysłowe<< miasto Nagoya w centralnej Japonii "	adj:sg:nom:n:pos	adj:sg:acc:n:pos
 2922	"z kimś cierpiącym . Trzymilionowe przemysłowe >>miasto<< Nagoya w centralnej Japonii ( "	subst:sg:nom:n	subst:sg:acc:n
 2923	"kimś cierpiącym . Trzymilionowe przemysłowe miasto >>Nagoya<< w centralnej Japonii ( tutaj "	subst:sg:nom:f	ign
-2931	"centralnej Japonii ( tutaj znajduje się >>m.in<< . słynna fabryka samochodów Toyota "	brev:pun	brev:pun
 2943	") posiada kilka uniwersytetów państwowych i >>kilkanaście<< prywatnych . Uniwersytet ten , "	num:pl:acc:m3:rec	num:pl:nom:m3:rec
 2944	"posiada kilka uniwersytetów państwowych i kilkanaście >>prywatnych<< . Uniwersytet ten , założony "	adj:pl:gen:m3:pos	subst:pl:gen:m1
 2951	". Uniwersytet ten , założony w >>1949<< r . i prowadzony przez "	adj:sg:loc:m3:pos	ign
@@ -655,7 +653,6 @@
 5701	", to - użyję sformułowania Jana >>Marii<< Rokity - niech " umiera "	subst:pl:gen:m1	subst:sg:gen:f
 5702	"to - użyję sformułowania Jana Marii >>Rokity<< - niech " umiera pod "	subst:pl:gen:m1	subst:sg:gen:f
 5718	". Andrzej Mackiewicz jest laureatem wielu >>znaczących<< wyróżnień : m.in . wielokrotnie "	pact:pl:gen:n:imperf:aff	adj:pl:gen:n:pos
-5721	"jest laureatem wielu znaczących wyróżnień : >>m.in<< . wielokrotnie Nagrody Ministra Zdrowia "	brev:pun	brev:pun
 5724	"znaczących wyróżnień : m.in . wielokrotnie >>Nagrody<< Ministra Zdrowia i Opieki Społecznej "	subst:sg:gen:f	subst:pl:nom:f
 5736	", Nagrody im . L . >>Hirszfejda<< oraz Amerykańskiego Towarzystwa Reumatologicznego . "	subst:sg:gen:m1	ign
 5745	"Towarzystwa Reumatologicznego . Dotychczas otrzymało ją >>dwóch<< polskich uczonych - profesorowie Mieczysław "	num:pl:nom:m1:rec	num:pl:gen:m3:congr
@@ -712,7 +709,6 @@
 6166	"zapadła w Defence Intelligence Agency ( >>DIA<< ) - przychylnym naszym staraniom "	subst:sg:nom:f	ign
 6183	"wywiadzie wojskowym , dla którego pracowało >>trzech<< wywiezionych z Iraku oficerów . "	num:pl:nom:m1:rec	num:pl:acc:m1:rec
 6189	"trzech wywiezionych z Iraku oficerów . >>Przewodnictwo<< obrad objął Jerzy Buzek " "	subst:sg:acc:n	subst:sg:nom:n
-6197	"objął Jerzy Buzek " . Jest >>m.in<< . absolwentem wydziałów teologicznego i "	brev:pun	brev:pun
 6233	"przydadzą się tu " szkiełko i >>oko<< " . Nagrody , choćby "	subst:sg:nom:n	subst:sg:acc:n
 6243	", choćby najwyższe , honorują " >>całokształt<< " - rzadko odzwierciedlają obecny "	subst:sg:acc:m3	subst:sg:nom:m3
 6328	"tej branży , jak i w >>kilku<< innych , następuje szybka konsolidacja "	num:pl:loc:f:congr	num:pl:loc:m3:congr
@@ -876,12 +872,10 @@
 7861	". Na zakończenie uroczystości głos zabrał >>sam<< ks . kardynał Sodano , "	adj:sg:nom:m1:pos	adj:sg:nom:m3:pos
 7865	"głos zabrał sam ks . kardynał >>Sodano<< , który na początku niemal "	subst:sg:nom:m1	ign
 7887	"pobytu we Wrocławiu . " Pustynia >>ceglano<< - kamienna '' stała się "	adja	ign
-7890	". " Pustynia ceglano - kamienna >>''<< stała się w następnych miesiącach "	interp	interp
 7897	"stała się w następnych miesiącach bazą >>egzekucji<< na więźniach . Czy wiernie "	subst:pl:gen:f	subst:sg:gen:f
 7908	"wiernie przekazuję istotę słów i postaw >>Stroppa<< oraz Schielkego ? Pomorska Regionalna "	subst:sg:gen:m1	ign
 7910	"istotę słów i postaw Stroppa oraz >>Schielkego<< ? Pomorska Regionalna Kasa Chorych "	subst:sg:gen:m1	ign
 7927	"pracowników Urzędu Nadzoru Ubezpieczeń Zdrowotnych . >>Sprawdzane<< są m.in . sygnały dotyczące "	ppas:pl:nom:m3:imperf:aff	ppas:pl:nom:f:imperf:aff
-7929	"Nadzoru Ubezpieczeń Zdrowotnych . Sprawdzane są >>m.in<< . sygnały dotyczące dostępu pacjentów "	brev:pun	brev:pun
 7940	"pacjentów do świadczeń zdrowotnych oraz zasad >>ich<< kontraktowania . 2 . Osoby "	ppron3:pl:gen:n:ter:akc:npraep	ppron3:pl:gen:f:ter:akc:npraep
 7943	"zdrowotnych oraz zasad ich kontraktowania . >>2<< . Osoby obejmujące akcje towarzystwa "	adj:sg:nom:n:pos	ign
 7947	"kontraktowania . 2 . Osoby obejmujące >>akcje<< towarzystwa są obowiązane do udokumentowania "	subst:pl:acc:f	subst:pl:nom:f
@@ -926,7 +920,6 @@
 8197	"przy ul . Żytniej . Patronat >>medialny<< nad imprezą objęło „ Echo "	adj:sg:acc:m3:pos	adj:sg:nom:m3:pos
 8217	"Stanisławowi Łyżwińskiemu siedem zarzutów , między >>innymi<< wykorzystywania seksualnego czterech kobiet oraz "	adj:pl:inst:m3:pos	adj:pl:inst:f:pos
 8229	"zgwałcenia . Warsztaty na ziemi świętokrzyskiej >>były<< pomysłem Krystyny Grabowskiej , prezesa "	praet:pl:n:imperf:nagl,praet:pl:n:imperf:agl	praet:pl:m3:imperf:agl,praet:pl:m3:imperf:nagl
-8242	". Biskup ordynariusz stwierdził w nim >>m.in<< . , " że w "	brev:pun	brev:pun
 8252	"że w krajach , gdzie wyrwano >>Boga<< z serca mieszkają bardzo smutni "	subst:sg:acc:m1	subst:sg:gen:m1
 8261	"mieszkają bardzo smutni ludzie , szukają >>radości<< w alkoholu , narkomani , "	subst:sg:gen:f	subst:pl:nom:f
 8265	", szukają radości w alkoholu , >>narkomani<< , niemoralnym trybie życia " "	subst:sg:loc:f	subst:pl:nom:m1
@@ -1386,7 +1379,6 @@
 12206	"jednostki substancji świata . Przemawia w >>nich<< botanik , astronom , badacz "	ppron3:pl:loc:n:ter:akc:praep	ppron3:pl:loc:m3:ter:akc:praep
 12207	"substancji świata . Przemawia w nich >>botanik<< , astronom , badacz czynności "	subst:sg:nom:m1	subst:pl:gen:f
 12212	"nich botanik , astronom , badacz >>czynności<< mózgu ? Nic podobnego . "	subst:pl:gen:f	subst:sg:gen:f
-12234	"jakaś pomyłka nastąpiła nastąpiła . Grażyna >>że<< ś ty wie – ale "	comp	comp
 12250	". i widać że jędrne . >>jędrne<< – i to musimy ci "	adj:pl:nom:f:pos	adj:sg:nom:n:pos
 12255	". jędrne – i to musimy >>ci<< to głośno powiedzieć . – "	ppron12:sg:dat:f:sec:nakc	ppron12:sg:dat:m1:sec:nakc
 12268	"bielizna ekspozycja od razu wzrok przyciąga >>charakter<< się liczy – patrzymy . "	subst:sg:nom:m3	subst:sg:acc:m3
@@ -1593,7 +1585,6 @@
 14173	"na odchudzanie . I mam zamiar >>ise<< w wolnej chwili na niego "	qub:wok,qub:nwok	ign
 14178	"zamiar ise w wolnej chwili na >>niego<< wybrać ! Ostatnio zaczęła m "	ppron3:sg:acc:m3:ter:akc:praep	ppron3:sg:acc:m1:ter:akc:praep
 14198	"ale " Jak w niebie " >>to<< nawet całkiem przyjemna komedia romantyczna "	pred	conj
-14205	"nawet całkiem przyjemna komedia romantyczna . >>Kogel-mogel<< . Opowiada o tym jak "	subst:sg:nom:m3	subst:sg:nom:m3
 14216	"jak wielką krzywdę mogą nam wyrządzić >>skrywane<< od lat tajemnice , niedomówienia "	ppas:pl:nom:f:imperf:aff	ppas:pl:nom:m3:imperf:aff
 14234	", ale wtedy nic innego nie >>leciło<< Z lodówki wyjęła niewielki dozownik "	fin:sg:ter:imperf	ign
 14247	"rubinową cieczą i bardzo ostrożnie wcisnęła >>go<< do otworu w pudełku . "	ppron3:sg:acc:m3:ter:nakc:npraep	ppron3:sg:acc:m1:ter:nakc:npraep
@@ -1672,7 +1663,6 @@
 15142	"bardzo teraz rozszerzone i w niego >>wpatrzone<< , zdawały się mówić co "	ppas:sg:nom:n:perf:aff	ppas:pl:acc:n:perf:aff
 15144	"rozszerzone i w niego wpatrzone , >>zdawały<< się mówić co innego . "	praet:pl:n:imperf:nagl,praet:pl:n:imperf:agl	praet:pl:f:imperf:nagl,praet:pl:f:imperf:agl
 15156	"- Powiedz . . . W >>Montownii<< grają m.in . Adam Krawczuk "	subst:sg:loc:f	ign
-15158	". . . W Montownii grają >>m.in<< . Adam Krawczuk , Marcin "	brev:pun	brev:pun
 15164	"m.in . Adam Krawczuk , Marcin >>Perchuć<< , Rafał Rutkowski , Maciej "	subst:sg:nom:m1	ign
 15173	"Rutkowski , Maciej Wierzbicki . Około >>239<< tys . mieszkańców . Jest "	num:pl:gen:m1:congr	ign
 15174	", Maciej Wierzbicki . Około 239 >>tys<< . mieszkańców . Jest wychowankiem "	brev:pun	ign
@@ -2038,7 +2028,6 @@
 18241	"głowa . Jak produkty znanej firmy >>Jablonex<< . Z tej okazji prezydent "	subst:sg:nom:m3	ign
 18254	"Kwaśniewski odznaczył za wybitne osiągnięcia artystyczne >>zasłużonych<< muzyków , m.in. Kazimierza Korda "	adj:pl:acc:m1:pos	ppas:pl:gen:m1:perf:aff
 18255	"odznaczył za wybitne osiągnięcia artystyczne zasłużonych >>muzyków<< , m.in. Kazimierza Korda , "	subst:pl:acc:m1	subst:pl:gen:m1
-18257	"wybitne osiągnięcia artystyczne zasłużonych muzyków , >>m.in.<< Kazimierza Korda , Konstantego Kulkę "	brev:pun	brev:pun
 18258	"osiągnięcia artystyczne zasłużonych muzyków , m.in. >>Kazimierza<< Korda , Konstantego Kulkę i "	subst:sg:acc:m1	subst:sg:gen:m3
 18259	"artystyczne zasłużonych muzyków , m.in. Kazimierza >>Korda<< , Konstantego Kulkę i Piotra "	subst:sg:acc:m1	subst:sg:gen:m3
 18262	", m.in. Kazimierza Korda , Konstantego >>Kulkę<< i Piotra Palecznego . – "	subst:sg:acc:m1	subst:sg:acc:f
@@ -2446,7 +2435,6 @@
 21631	", że uznano , iż samochód >>Maryjana<< poszedł w ręce wroga " "	subst:sg:gen:m1	ign
 21632	"że uznano , iż samochód Maryjana >>poszedł<< w ręce wroga " Solidarności "	praet:sg:m3:perf:agl,praet:sg:m3:perf:nagl	praet:sg:m1:perf:agl,praet:sg:m1:perf:nagl
 21646	"który w swej Jordanowskiej Fabryce Armatury >>Valvex<< S.A . miał dwa lata "	subst:sg:nom:m3	ign
-21647	"w swej Jordanowskiej Fabryce Armatury Valvex >>S.A<< . miał dwa lata wcześniej "	brev:pun	brev:pun
 21653	"S.A . miał dwa lata wcześniej >>spór<< z załogą , to jeszcze "	subst:sg:acc:m3	subst:sg:nom:m3
 21658	"wcześniej spór z załogą , to >>jeszcze<< wypominano mu , że powinien "	conj	qub:wok,qub:nwok
 21669	"powinien zabulić za autko co najmniej >>100<< tys . baksów . Kumacie "	num:pl:acc:m3:rec	ign
@@ -2626,7 +2614,6 @@
 23078	"kawałkiem opinii z „ New York >>Timesa<< ” : Godny i twórczy "	subst:sg:gen:m3	ign
 23088	"i twórczy uczeń wielkiego mistrza Johna >>Grishama<< . Tak różowo nie jest "	subst:sg:gen:m1	ign
 23118	"oskarżenia . Jako pokutę trzy razy >>odmów<< " Który za nas cierpiał "	impt:sg:sec:perf	subst:pl:gen:f
-23120	"Jako pokutę trzy razy odmów " >>Który<< za nas cierpiał rany " "	adj:sg:nom:m1:pos	adj:sg:nom:m1:pos
 23129	"nas cierpiał rany " . Wikary >>Pudło<< odprawia je żując gumę . "	subst:sg:nom:m1	subst:sg:nom:n
 23135	"Pudło odprawia je żując gumę . >>PS<< Wszystkie opisane powyżej metody są "	brev:npun	brev:pun
 23136	"odprawia je żując gumę . PS >>Wszystkie<< opisane powyżej metody są niezgodne "	adj:pl:nom:f:pos	adj:pl:acc:f:pos
@@ -3442,7 +3429,6 @@
 30388	"Bez ciepła . Weryfikacja tych informacji >>to<< już nie moje zadanie . "	pred	subst:sg:acc:n
 30404	", a wtedy stowarzyszenie poprosiło o >>dodatkowe<< 118 mln na paliwo do "	adj:pl:acc:m3:pos	adj:pl:acc:n:pos
 30405	"a wtedy stowarzyszenie poprosiło o dodatkowe >>118<< mln na paliwo do pieca "	num:pl:acc:m3:rec	ign
-30411	"118 mln na paliwo do pieca >>c.o<< . i opłacenie firm budowlanych "	brev:pun	brev:pun
 30434	"niż uśmiercenie na łamach gazety kogoś >>żyjącego<< . " Gazeta " ma "	pact:sg:acc:m1:imperf:aff	subst:sg:gen:m1
 30441	". " Gazeta " ma też >>dowody<< , że łapówki od studentów "	subst:pl:acc:m3	subst:pl:nom:m3
 30444	"" ma też dowody , że >>łapówki<< od studentów brał również inny "	subst:pl:acc:f	subst:pl:nom:f
@@ -3472,7 +3458,6 @@
 30570	"ludzi zmęczonych kosztami transformacji , niepewnych >>przyszłości<< , z obawą patrzących na "	subst:sg:gen:f	subst:pl:gen:f
 30585	"gospodarki rynkowej , która już nałożyła >>na<< wszystkich ciężary , ale jeszcze "	prep:acc:nwok,prep:acc:wok	prep:loc:wok,prep:loc:nwok
 30586	"rynkowej , która już nałożyła na >>wszystkich<< ciężary , ale jeszcze nie "	subst:pl:acc:m1	subst:pl:loc:m1
-30603	"To , że kilku aktorów , >>m.in<< . Zamachowski , pobudowało się "	brev:pun	brev:pun
 30605	"że kilku aktorów , m.in . >>Zamachowski<< , pobudowało się w okolicach "	subst:sg:nom:m1	ign
 30617	"Komorowa , nie znaczy , że >>w<< ich ślady pójdą inni . "	prep:acc:nwok	prep:loc:nwok
 30653	"Mirosław S . Żochowski , o >>którym<< były publicysta " Szczerbca " "	adj:sg:loc:m1:pos	adj:sg:loc:m3:pos
@@ -3856,7 +3841,6 @@
 33686	"rzeczywistości jest ich jeszcze o 50 >>tys<< . mniej . Obowiązująca w "	brev:pun	ign
 33688	"ich jeszcze o 50 tys . >>mniej<< . Obowiązująca w czasie wyborów "	num:pl:nom:m1:rec	adv:com
 33694	"mniej . Obowiązująca w czasie wyborów >>1991<< r . ordynacja " bez "	adj:sg:gen:m3:pos	ign
-33712	"Nowa ekipa miała nowe pomysły , >>m.in<< . projekt masowej komercjalizacji zapisany "	brev:pun	brev:pun
 33714	"miała nowe pomysły , m.in . >>projekt<< masowej komercjalizacji zapisany w " "	subst:sg:acc:m3	subst:sg:nom:m3
 33717	", m.in . projekt masowej komercjalizacji >>zapisany<< w " Strategii dla Polski "	ppas:sg:acc:m3:perf:aff	ppas:sg:nom:m3:perf:aff
 33720	"projekt masowej komercjalizacji zapisany w " >>Strategii<< dla Polski " . W "	subst:sg:loc:f	subst:sg:gen:f
@@ -3877,7 +3861,6 @@
 33863	"PKO BP czy skarb państwa - >>powinien<< zwaloryzować premie gwarancyjne przysługujące właścicielom "	winien:sg:m1:imperf	winien:sg:m3:imperf
 33875	"książeczek mieszkaniowych . Mamy w piwnicy >>stary<< piec c.o na koks i "	adj:sg:acc:m3:pos	adj:sg:nom:m3:pos
 33876	"mieszkaniowych . Mamy w piwnicy stary >>piec<< c.o na koks i chyba "	subst:sg:acc:m3	subst:sg:nom:m3
-33877	". Mamy w piwnicy stary piec >>c.o<< na koks i chyba będziemy "	brev:pun	brev:pun
 33892	"na nowo i spalać w nim >>wszystko<< , co się da , "	subst:sg:acc:n	subst:sg:nom:n
 33894	"i spalać w nim wszystko , >>co<< się da , bo będzie "	subst:sg:acc:n	subst:sg:nom:n
 33909	"dziewczynki siedzą na podwórzu i zakładają >>kolorowe<< wrotki . - Bezgranicznie jej "	adj:pl:acc:f:pos	adj:pl:nom:m2:pos
@@ -4306,7 +4289,6 @@
 37810	"ręce ? Cena : 89 - >>109<< zł . Rada załatwiła w "	num:pl:nom:m2:rec	ign
 37818	". Rada załatwiła w budżecie miasta >>100<< tys . zł na oddłużenie "	num:pl:acc:m3:rec	ign
 37819	"Rada załatwiła w budżecie miasta 100 >>tys<< . zł na oddłużenie pomnika "	brev:pun	ign
-37827	"zł na oddłużenie pomnika , zdejmując >>m.in<< . pieniądze na wyjazdy do "	brev:pun	brev:pun
 37862	"jestem zmuszony do tego żeby przełożyć >>pana<< bardzo elokwentny wywód na język "	subst:sg:gen:m1	subst:sg:acc:m1
 37895	". . . Jeżeli masz , >>to<< znaczy że ukrywasz , bo "	conj	subst:sg:nom:n
 37907	"nic nie widać . WIDMO - >>Co<< nieco widział em ! ( "	qub:wok,qub:nwok	subst:sg:acc:n
@@ -4506,7 +4488,6 @@
 39631	"wielkie przedsiębiorstwa . - Chłopcy , >>to<< nie jest takie skomplikowane . "	subst:sg:nom:n	conj
 39637	"to nie jest takie skomplikowane . >>Wstępne<< oferty na huty zgłosiły już "	adj:pl:acc:f:pos	adj:pl:nom:f:pos
 39638	"nie jest takie skomplikowane . Wstępne >>oferty<< na huty zgłosiły już m.in "	subst:pl:acc:f	subst:pl:nom:f
-39643	"Wstępne oferty na huty zgłosiły już >>m.in<< . takie firmy , jak "	brev:pun	brev:pun
 39648	"już m.in . takie firmy , >>jak<< niemiecki Thysen , koreański Daewoo "	prep:nom:wok,prep:nom:nwok	adv:pos
 39649	"m.in . takie firmy , jak >>niemiecki<< Thysen , koreański Daewoo czy "	adj:sg:nom:m2:pos	adj:sg:nom:m3:pos
 39650	". takie firmy , jak niemiecki >>Thysen<< , koreański Daewoo czy japoński "	subst:sg:nom:m2	ign
@@ -4783,7 +4764,6 @@
 41990	"że woj . kieleckie / w >>woj<< . kieleckim ) , tak "	brev:pun	subst:sg:nom:m1
 42072	"statek martwy jest i ktokolwiek na >>nim<< żeglował , w pierścieniu raf "	ppron3:sg:loc:m3:ter:akc:praep	ppron3:sg:loc:m1:ter:akc:praep
 42079	"żeglował , w pierścieniu raf obronnych >>poległ<< - odparli . KWIDZYN . "	praet:sg:m1:perf:agl,praet:sg:m1:perf:nagl	praet:sg:m3:perf:agl,praet:sg:m3:perf:nagl
-42102	"że był już wcześniej karany , >>m.in<< . za przestępstwa seksualne . "	brev:pun	brev:pun
 42108	"m.in . za przestępstwa seksualne . >>PCPR<< pilnie szuka chętnych , jednak "	subst:sg:nom:n	ign
 42111	"przestępstwa seksualne . PCPR pilnie szuka >>chętnych<< , jednak rodziny wolą opiekować "	adj:pl:gen:m1:pos	subst:pl:acc:m1
 42157	"Liczy jednak na to , że >>i<< województwo kujawsko - pomorskie dołoży "	qub:wok,qub:nwok	conj
@@ -4922,13 +4902,11 @@
 43429	"premier Ariel Szaron . Uwolnił ich >>10-tys<< . tłum . Ponadto zgodnie "	brev:pun	ign
 43436	". tłum . Ponadto zgodnie z >>art<< . 479 k.p.c . organizacje "	brev:pun	ign
 43438	". Ponadto zgodnie z art . >>479<< k.p.c . organizacje podmiotów gospodarczych "	adj:sg:inst:m3:pos	ign
-43439	"Ponadto zgodnie z art . 479 >>k.p.c<< . organizacje podmiotów gospodarczych , "	brev:pun	brev:pun
 43449	"gospodarczych , za zgodą zrzeszonego w >>nich<< podmiotu gospodarczego , mogą wziąć "	ppron3:pl:loc:f:ter:akc:praep	ppron3:pl:loc:m3:ter:akc:praep
 43459	"mogą wziąć udział w toczącym się >>postępowaniu<< , w którym podmiot ten "	subst:sg:loc:n	subst:sg:dat:n
 43473	"charakterze strony ( stosuje się odpowiednio >>art<< . 62 i 63 k.p.c "	brev:pun	ign
 43475	"( stosuje się odpowiednio art . >>62<< i 63 k.p.c . ) "	adj:sg:acc:m3:pos	ign
 43477	"się odpowiednio art . 62 i >>63<< k.p.c . ) . – "	adj:sg:acc:m3:pos	ign
-43478	"odpowiednio art . 62 i 63 >>k.p.c<< . ) . – łaa "	brev:pun	brev:pun
 43483	"63 k.p.c . ) . – >>łaa<< – jest druga ziom i "	interj	ign
 43487	". – łaa – jest druga >>ziom<< i myślę że historia może "	subst:sg:nom:m1	ign
 43535	"! O terminie losowania zawiadamia się >>pełnomocników<< wyborczych ; nieobecność pełnomocnika nie "	subst:pl:acc:m1	subst:pl:gen:m1
@@ -5218,7 +5196,6 @@
 45754	"nurkowania można trafić na co drugiej >>ciepłej<< plaży . Do sprawdzenia przez "	adj:sg:loc:f:pos	adj:sg:gen:f:pos
 45755	"można trafić na co drugiej ciepłej >>plaży<< . Do sprawdzenia przez prokuratorów "	subst:sg:loc:f	subst:sg:gen:f
 45761	"plaży . Do sprawdzenia przez prokuratorów >>wyznaczył<< m.in . sprawę światłowodu biegnącego "	praet:sg:m1:perf:agl,praet:sg:m1:perf:nagl	praet:sg:m3:perf:agl,praet:sg:m3:perf:nagl
-45762	". Do sprawdzenia przez prokuratorów wyznaczył >>m.in<< . sprawę światłowodu biegnącego wzdłuż "	brev:pun	brev:pun
 45777	"prywatyzacji PZU oraz Telekomunikacji , a >>także<< sędziów w Toruniu i Katowicach "	conj	qub:wok,qub:nwok
 45778	"PZU oraz Telekomunikacji , a także >>sędziów<< w Toruniu i Katowicach . "	subst:pl:gen:m1	subst:pl:acc:m1
 45784	"sędziów w Toruniu i Katowicach . >>12<< lat za wielki napad . "	num:pl:acc:m3:rec	ign
@@ -5360,7 +5337,6 @@
 46910	") . To było pod hotelem >>Rossija<< . Ludzie wokół zagubieni , "	subst:sg:nom:f	ign
 46924	"Nadzieja umiera ostatnia " . – >>To<< od strony męskiej , a "	subst:sg:nom:n	qub:wok,qub:nwok
 46937	"żeńskiej ? Jeśli masz w ogóle >>pytania<< . Puszczaj , bo zabiję "	subst:pl:acc:n	subst:sg:gen:n
-46972	"ziemię zastukały ciężkie buty . - >>Gdzie<< się wczoraj zaszlajał , Lesław "	adv:pos,adv:com,adv:sup	adv:pos,adv:com,adv:sup
 46976	"buty . - Gdzie się wczoraj >>zaszlajał<< , Lesław ? Wariat . "	praet:sg:m1:perf:agl,praet:sg:m1:perf:nagl	ign
 46982	"zaszlajał , Lesław ? Wariat . >>Duk<< - dam ! Ty na "	interj	subst:sg:nom:m1
 46984	"Lesław ? Wariat . Duk - >>dam<< ! Ty na pewno słyszał "	interj	fin:sg:pri:perf
@@ -5573,7 +5549,6 @@
 49071	"później statek z Edwinem Aldrinem i >>Neilem<< Armstrongiem na pokładzie bezpiecznie osiadł "	subst:sg:inst:m1	ign
 49081	"bezpiecznie osiadł na powierzchni Księżyca . >>Rozwiązania<< powyższych problemów opracowano już kilkadziesiąt "	subst:pl:acc:n	subst:pl:nom:n
 49097	"dopiero niedawno technika cyfrowa pozwoliła na >>ich<< praktyczną realizację . Z norm "	ppron3:pl:gen:n:ter:akc:npraep	ppron3:pl:gen:m3:ter:akc:npraep
-49105	"realizację . Z norm tych wynika >>m.in<< . uzgodniony przez CCITT podział "	brev:pun	brev:pun
 49109	"tych wynika m.in . uzgodniony przez >>CCITT<< podział całego świata na 8 "	subst:sg:acc:m3	ign
 49110	"wynika m.in . uzgodniony przez CCITT >>podział<< całego świata na 8 odrębnych "	subst:sg:nom:m3	subst:sg:acc:m3
 49114	"przez CCITT podział całego świata na >>8<< odrębnych światowych stref numeracyjnych : "	num:pl:acc:f:rec	ign
@@ -5641,7 +5616,6 @@
 49614	"podrobionego adidasa , w dłonie ujęła >>kiść<< toreb i pomagając sobie nogą "	subst:sg:acc:f	subst:sg:nom:f
 49683	"że " WC Kwadrans " nosił >>cechy<< ideologii faszystowskiej - jak m.in "	subst:pl:acc:f	subst:pl:acc:m3
 49687	"" nosił cechy ideologii faszystowskiej - >>jak<< m.in . apoteoza siły i "	prep:nom:wok,prep:nom:nwok	adv:pos
-49688	"nosił cechy ideologii faszystowskiej - jak >>m.in<< . apoteoza siły i przemocy "	brev:pun	brev:pun
 49718	". - No zobaczymy . Może >>pół<< roku jeszcze ? Podjeżdżały beczkowozy "	subst:sg:acc:n	num:pl:acc:m3:rec
 49727	"? Podjeżdżały beczkowozy czy cysterny , >>czy<< nie wiem co , i "	conj	qub:wok,qub:nwok
 49741	"ile kto chciał . Bo ktoś >>zaraz<< na kilka osób przed nami "	adv:pos,adv:com,adv:sup	qub:wok,qub:nwok
@@ -5672,7 +5646,6 @@
 49906	"WYDAWCY Natomiast według Piedrahity , jak >>to<< już było powiedziane , miało "	subst:sg:nom:n	pred
 49912	"to już było powiedziane , miało >>to<< miejsce znacznie wcześniej , bo "	subst:sg:nom:n	adj:sg:acc:n:pos
 49919	"miejsce znacznie wcześniej , bo około >>463<< roku p.n.e . Są wreszcie "	adj:sg:gen:m3:pos	ign
-49921	"wcześniej , bo około 463 roku >>p.n.e<< . Są wreszcie stwory , "	brev:pun	brev:pun
 49927	"p.n.e . Są wreszcie stwory , >>których<< oko ludzkie nie oglądało przed "	adj:pl:gen:m2:pos	adj:pl:gen:n:pos
 49938	"przed Kolumbem , że wymienię tylko >>trójokie<< półkoty , półptaki , orły "	adj:pl:acc:m2:pos	ign
 49939	"Kolumbem , że wymienię tylko trójokie >>półkoty<< , półptaki , orły przedpotopowe "	subst:pl:acc:m2	ign
@@ -5770,7 +5743,6 @@
 50589	"Księdzu Proboszczowi we wszystkich poczynaniach na >>wierzchowiskiej<< niwie ! Był zatrudniony jako "	adj:sg:loc:f:pos	ign
 50593	"poczynaniach na wierzchowiskiej niwie ! Był >>zatrudniony<< jako dozorca . – znaczy "	ppas:sg:nom:m1:perf:aff	adj:sg:nom:m1:pos
 50594	"na wierzchowiskiej niwie ! Był zatrudniony >>jako<< dozorca . – znaczy w "	prep:nom:wok,prep:nom:nwok	conj
-50605	"w pawilonach czy w . . >>--<< 22 : 12 , 2 "	interp	interp
 50606	"pawilonach czy w . . -- >>22<< : 12 , 2 wrz "	adj:sg:nom:f:pos	ign
 50608	"w . . -- 22 : >>12<< , 2 wrz 2006 ( "	num:pl:nom:f:rec	ign
 50610	". -- 22 : 12 , >>2<< wrz 2006 ( CEST ) "	adj:sg:gen:m3:pos	ign
@@ -5814,7 +5786,6 @@
 50917	", walczącej o godność z dziesiątkami >>lepkich<< i bezwzględnych w swej ciekawości "	adj:pl:gen:n:pos	adj:pl:gen:f:pos
 50919	"o godność z dziesiątkami lepkich i >>bezwzględnych<< w swej ciekawości ludzkich spojrzeń "	adj:pl:gen:n:pos	adj:pl:gen:f:pos
 50949	"zamiast rozwodu można wnieść do sądu >>pozew<< o separację . Chodziło m.in "	subst:sg:acc:m3	subst:sg:nom:m3
-50954	"sądu pozew o separację . Chodziło >>m.in<< . o to , żeby "	brev:pun	brev:pun
 50974	"które nie akceptują instytucji rozwodu . >>Orzeczenie<< separacji nie oznacza , że "	ger:sg:nom:n:perf:aff	subst:sg:nom:n
 50988	"nie można wystąpić o rozwód . >>Wyrok<< ten uchylił sąd apelacyjny . "	subst:sg:acc:m3	subst:sg:nom:m3
 50989	"można wystąpić o rozwód . Wyrok >>ten<< uchylił sąd apelacyjny . To "	adj:sg:acc:m3:pos	adj:sg:nom:m3:pos
@@ -6173,7 +6144,6 @@
 54174	". - Nic . . . >>nic<< . . . ma pan "	subst:sg:nom:n	subst:sg:gen:n
 54180	"nic . . . ma pan >>zdrowe<< nerwy , kolego . . "	adj:pl:acc:n:pos	adj:pl:acc:m3:pos
 54181	". . . ma pan zdrowe >>nerwy<< , kolego . . . "	subst:pl:acc:n	subst:pl:acc:m3
-54191	". . Woda ta dostarczana jest >>m.in<< . do mieszkań w Proszowicach "	brev:pun	brev:pun
 54196	"jest m.in . do mieszkań w >>Proszowicach<< . Od rzeczy , bo "	subst:sg:loc:m3	subst:pl:loc:n
 54210	"był jeszcze malarską formułą i nie >>został<< obwarowany żadnymi doktrynalnymi regułami , "	praet:sg:m3:perf:agl,praet:sg:m3:perf:nagl	praet:sg:m1:perf:agl,praet:sg:m1:perf:nagl
 54211	"jeszcze malarską formułą i nie został >>obwarowany<< żadnymi doktrynalnymi regułami , które "	ppas:sg:nom:m3:perf:aff	ppas:sg:nom:m1:perf:aff
@@ -6190,7 +6160,6 @@
 54318	"Away . Śpiewa jazz i muzykę >>pop<< . W Wadowicach przekazane zostaną "	adj:sg:acc:f:pos	subst:sg:acc:m3
 54324	"pop . W Wadowicach przekazane zostaną >>mieszkania<< " pod klucz " , "	subst:pl:nom:n	subst:pl:acc:n
 54330	"mieszkania " pod klucz " , >>wyposażone<< m. . w kuchenkę gazową "	ppas:pl:nom:n:perf:aff	ppas:sg:nom:n:perf:aff
-54331	"" pod klucz " , wyposażone >>m.<< . w kuchenkę gazową , "	brev:pun	brev:pun
 54342	", piecyki gazowe . Data i >>miejsce<< urodzenia : 11 września 1941 "	subst:sg:nom:n	subst:sg:acc:n
 54345	". Data i miejsce urodzenia : >>11<< września 1941 w Olszanie . "	adj:sg:nom:m3:pos	ign
 54347	"i miejsce urodzenia : 11 września >>1941<< w Olszanie . Przy zwolnieniach "	adj:sg:gen:m3:pos	ign
@@ -6559,7 +6528,6 @@
 57321	", gimnazjalistka z Kalet , której >>zwłoki<< znaleziono w lesie , i "	subst:pl:acc:n	subst:sg:gen:f
 57328	"znaleziono w lesie , i Asia >>Surowiecka<< ( 19 l . ) "	subst:sg:nom:f	ign
 57330	"lesie , i Asia Surowiecka ( >>19<< l . ) , studentka "	num:pl:nom:m3:rec	ign
-57337	"l . ) , studentka z >>Czechowic-Dziedzic<< , która zaginęła ponad miesiąc "	subst:pl:gen:n	subst:pl:gen:n
 57351	"Policja potwierdza , że zgłaszają się >>kolejne<< niedoszłe ofiary zwyrodnialca ! Naukowe "	adj:pl:nom:f:pos	adj:pl:nom:n:pos
 57368	"w dziesiątkę . Kabiny obu samochodów >>zostały<< doszczętnie zmiażdżone . Stan dziecka "	praet:pl:f:perf:agl,praet:pl:f:perf:nagl	praet:pl:m3:perf:nagl,praet:pl:m3:perf:agl
 57370	". Kabiny obu samochodów zostały doszczętnie >>zmiażdżone<< . Stan dziecka jest dobry "	ppas:pl:nom:f:perf:aff	ppas:pl:nom:m3:perf:aff
@@ -6665,7 +6633,6 @@
 58443	"renciści . Trzy szkoły ze Śląska >>dotarły<< do wielkiego finału konkursu " "	praet:pl:f:perf:agl,praet:pl:f:perf:nagl	praet:pl:m3:perf:nagl,praet:pl:m3:perf:agl
 58453	"konkursu " Super Szkoła " , >>którego<< organizatorem jest " Super Express "	adj:sg:gen:m3:pos	adj:sg:gen:n:pos
 58462	"" Super Express " . W >>ich<< trakcie funkcjonariusz będzie pytany m.in "	ppron3:pl:gen:f:ter:akc:npraep	ppron3:pl:gen:m1:ter:akc:npraep
-58467	"W ich trakcie funkcjonariusz będzie pytany >>m.in<< . o to , czy "	brev:pun	brev:pun
 58492	"Drinkować zaczął po pierwszym wyjeździe do >>chorego<< . 150 tys . zł "	subst:sg:gen:m1	adj:sg:gen:m3:pos
 58494	"po pierwszym wyjeździe do chorego . >>150<< tys . zł stracił lubuski "	num:pl:acc:m3:rec	ign
 58495	"pierwszym wyjeździe do chorego . 150 >>tys<< . zł stracił lubuski oddział "	brev:pun	ign
@@ -6673,7 +6640,6 @@
 58500	"150 tys . zł stracił lubuski >>oddział<< Narodowego Funduszu Zdrowia wskutek oszustw "	subst:sg:nom:m3	subst:sg:acc:m3
 58507	"Narodowego Funduszu Zdrowia wskutek oszustw zarzucanych >>12<< mieszkańcom Sulęcina ( Lubuskie ) "	num:pl:dat:m1:congr	ign
 58519	". Chodzi o fałszowanie i realizację >>refundowanych<< recept na drogie leki ( "	ppas:pl:gen:f:imperf:aff	ppas:pl:gen:f:perf:aff
-58525	"refundowanych recept na drogie leki ( >>m.in<< . viagrę ) , które "	brev:pun	brev:pun
 58530	"( m.in . viagrę ) , >>które<< bez wiedzy pacjentów wystawiano na "	adj:pl:acc:f:pos	adj:sg:nom:n:pos
 58536	"które bez wiedzy pacjentów wystawiano na >>ich<< nazwiska . Rosja . Wieś "	ppron3:pl:gen:m1:ter:akc:npraep	ppron3:pl:gen:f:ter:akc:npraep
 58553	"zbrodniarzy , ale co my jesteśmy >>winni<< ? - Rodzinę na Ukrainie "	winien:pl:m1:imperf	adj:pl:nom:m1:pos
@@ -7752,7 +7718,6 @@
 68615	"taki system cen . Spotkanie w >>Kaiserslautern<< było jednak przerwaniem dobrej passy "	subst:sg:loc:n	ign
 68642	"jest nie w porządku , że >>to<< dziwne , podejrzane środowisko te "	pred	subst:sg:nom:n
 68652	"środowisko te media . W sobotę >>gmach<< sądu w Bielsku-Białej przypominał twierdzę "	subst:sg:nom:m3	subst:sg:acc:m3
-68655	". W sobotę gmach sądu w >>Bielsku-Białej<< przypominał twierdzę . Podczas środowego "	subst:sg:loc:n	subst:sg:loc:n
 68656	"W sobotę gmach sądu w Bielsku-Białej >>przypominał<< twierdzę . Podczas środowego posiedzenia "	praet:sg:m3:imperf:agl,praet:sg:m3:imperf:nagl	praet:sg:m1:imperf:nagl,praet:sg:m1:imperf:agl
 68661	"Bielsku-Białej przypominał twierdzę . Podczas środowego >>posiedzenia<< sejmowej Komisji Spraw Zagranicznych szef "	subst:sg:gen:n	ger:sg:gen:n:perf:aff
 68670	"Spraw Zagranicznych szef polskiej dyplomacji Stefan >>Meller<< zdradził , że był zdziwiony "	subst:sg:nom:m1	ign
@@ -7831,7 +7796,6 @@
 69485	"że przesłoni wszystkie inne , którymi >>PiS<< zamierza karmić wyborców . Mamy "	subst:sg:nom:n	subst:sg:gen:n
 69501	"- wokół pomysłu Sejmu . Niewątpliwie >>za<< taką uznać należy kwestię wyżywienia "	prep:acc:nwok,prep:acc:wok	prep:inst:wok,prep:inst:nwok
 69502	"wokół pomysłu Sejmu . Niewątpliwie za >>taką<< uznać należy kwestię wyżywienia . "	adj:sg:acc:f:pos	adj:sg:inst:f:pos
-69514	"Znalazła ona w pierwszym dniu Kongresu >>m.<< . wyraz w oświadczeniu przedstawiciela "	brev:pun	brev:pun
 69516	"w pierwszym dniu Kongresu m. . >>wyraz<< w oświadczeniu przedstawiciela francuskich robotników "	subst:sg:acc:m3	subst:sg:nom:m3
 69534	"nie będzie się bił przeciwko Związkowi >>Radzieckiemu<< . Program onkologiczny został przyjęty "	subst:sg:dat:m3	adj:sg:dat:m3:pos
 69549	"i przez poprzedni Sejm . Widzę >>zamknięte<< zakłady pracy , Hutę Katowice "	ppas:pl:acc:m3:perf:aff	adj:pl:acc:m3:pos
@@ -8328,7 +8292,6 @@
 73757	"na to rys . 13 . >>Pierwsze<< takie emisje teoretycznie zostały już "	adj:pl:nom:f:pos	adj:pl:acc:f:pos
 73758	"to rys . 13 . Pierwsze >>takie<< emisje teoretycznie zostały już dokonane "	adj:pl:nom:f:pos	adj:pl:acc:f:pos
 73759	"rys . 13 . Pierwsze takie >>emisje<< teoretycznie zostały już dokonane kilka "	subst:pl:nom:f	subst:pl:acc:f
-73768	"już dokonane kilka lat temu ( >>m.in<< . PBR oferował noty depozytowe "	brev:pun	brev:pun
 73781	", ale liczba emisji uplasowanych na >>rynkach<< zagranicznych przed połową 1996 roku "	subst:pl:loc:m3	subst:pl:loc:f
 73782	"ale liczba emisji uplasowanych na rynkach >>zagranicznych<< przed połową 1996 roku była "	adj:pl:loc:m3:pos	adj:pl:loc:f:pos
 73785	"uplasowanych na rynkach zagranicznych przed połową >>1996<< roku była nieduża . Suma "	adj:sg:gen:m3:pos	ign
@@ -9000,7 +8963,6 @@
 79152	"zwierzenia byłej stypendystki Białego Domu , >>które<< przez przeszło rok Amerykanie mieli "	adj:pl:acc:n:pos	adj:sg:nom:n:pos
 79155	"Białego Domu , które przez przeszło >>rok<< Amerykanie mieli na co dzień "	subst:sg:acc:m3	subst:sg:nom:m3
 79178	"Francji , która utrzymywała jeszcze wówczas >>stanowisko<< prekursora . Do cyklu tego "	subst:sg:acc:n	subst:sg:nom:n
-79185	"prekursora . Do cyklu tego należą >>m.in<< . powieści : Assommoir , "	brev:pun	brev:pun
 79187	"Do cyklu tego należą m.in . >>powieści<< : Assommoir , 1877 ( "	subst:pl:nom:f	subst:sg:gen:f
 79189	"tego należą m.in . powieści : >>Assommoir<< , 1877 ( wyd . "	subst:sg:nom:m3	ign
 79191	"m.in . powieści : Assommoir , >>1877<< ( wyd . pol . "	num:pl:nom:m3:rec	ign
@@ -9215,7 +9177,6 @@
 80959	"indoeuropejskich , które na subkontynent indyjski >>zaczęły<< przybywać około XV wieku p.n.e "	praet:pl:n:perf:agl,praet:pl:n:perf:nagl	praet:pl:f:perf:agl,praet:pl:f:perf:nagl
 80961	"które na subkontynent indyjski zaczęły przybywać >>około<< XV wieku p.n.e . Antybiotyki "	prep:gen:wok,prep:gen:nwok	qub:wok,qub:nwok
 80962	"na subkontynent indyjski zaczęły przybywać około >>XV<< wieku p.n.e . Antybiotyki to "	adj:sg:gen:m3:pos	ign
-80964	"indyjski zaczęły przybywać około XV wieku >>p.n.e<< . Antybiotyki to związki chemiczne "	brev:pun	brev:pun
 80983	"Po dokładnych oględzinach , na podstawie >>stylu<< i treści , naukowcy określili "	subst:sg:gen:m3	subst:sg:loc:m3
 80985	"oględzinach , na podstawie stylu i >>treści<< , naukowcy określili ich wiek "	subst:sg:gen:f	subst:sg:loc:f
 80989	"stylu i treści , naukowcy określili >>ich<< wiek na mniej więcej 20 "	ppron3:pl:gen:m3:ter:akc:npraep	ppron3:pl:gen:m1:ter:akc:npraep
@@ -9538,7 +9499,6 @@
 83854	"sprawiedliwiej ? ! A niźli skona >>pieśń<< , naród pierw wstanie . "	subst:sg:nom:f	subst:sg:acc:f
 83856	"! A niźli skona pieśń , >>naród<< pierw wstanie . - W "	subst:sg:nom:m3	subst:sg:acc:m3
 83869	"komentarzu umieszczonym we wkładce płyty " >>Spod<< " " czytamy m.in. : "	prep:gen:nwok	ign
-83875	"płyty " Spod " " czytamy >>m.in.<< : " Spokorniał em i "	brev:pun	brev:pun
 83883	"" Spokorniał em i nie męczy >>mnie<< głód awangardowego zawracania głowy " "	ppron12:sg:gen:m1:pri:akc	ppron12:sg:acc:m1:pri:akc
 83884	"Spokorniał em i nie męczy mnie >>głód<< awangardowego zawracania głowy " . "	subst:sg:nom:m3	subst:sg:acc:m3
 83894	"" . Ta płyta nie jest >>ani<< w jednym calu awangardowa na "	qub:wok,qub:nwok	conj
@@ -10746,7 +10706,6 @@
 94696	"Prawa miejskie od 1367 . W >>XVII<< w . w posiadaniu Mikołaja "	adj:sg:loc:m3:pos	ign
 94717	"obraz Z . Wilińskiej ( kopia >>zniszczonego<< obrazu F . Smuglewicza ) "	ppas:sg:gen:m3:perf:aff	adj:sg:gen:m3:pos
 94721	"( kopia zniszczonego obrazu F . >>Smuglewicza<< ) „ Wniebowzięcie NMP ’’ "	subst:sg:gen:m1	ign
-94726	". Smuglewicza ) „ Wniebowzięcie NMP >>’’<< . Przy prezbiterium dwa nagrobki "	interp	interp
 94730	"Wniebowzięcie NMP ’’ . Przy prezbiterium >>dwa<< nagrobki opatów : A . "	num:pl:nom:m3:congr	num:pl:acc:m3:congr
 94731	"NMP ’’ . Przy prezbiterium dwa >>nagrobki<< opatów : A . Mielińskiego "	subst:pl:nom:m3	subst:pl:acc:m3
 94736	"dwa nagrobki opatów : A . >>Mielińskiego<< ( zm . 1584 ) "	subst:sg:gen:m1	ign
@@ -10756,7 +10715,6 @@
 94757	". W centrum znajduje się osada >>Głusko<< stanowiąca dobry punkt wyjścia na "	subst:sg:nom:n	adv:pos
 94759	"centrum znajduje się osada Głusko stanowiąca >>dobry<< punkt wyjścia na teren Parku "	adj:sg:acc:m3:pos	adj:sg:nom:m3:pos
 94760	"znajduje się osada Głusko stanowiąca dobry >>punkt<< wyjścia na teren Parku m.in "	subst:sg:acc:m3	subst:sg:nom:m3
-94765	"dobry punkt wyjścia na teren Parku >>m.in<< . nad jez . Ostrowiec "	brev:pun	brev:pun
 94767	"wyjścia na teren Parku m.in . >>nad<< jez . Ostrowiec . 24 "	prep:acc:nwok	prep:inst:nwok
 94768	"na teren Parku m.in . nad >>jez<< . Ostrowiec . 24 I "	brev:pun	ign
 94772	". nad jez . Ostrowiec . >>24<< I 1945 wojska radzieckie przełamały "	adj:sg:gen:m3:pos	ign
@@ -11404,7 +11362,6 @@
 100410	"Manggha " przy ulicy Marii Konopnickiej >>26<< , w zakolu Wisły , "	num:pl:nom:m3:rec	ign
 100423	"Wawelu . ( www.manggha.krakow.pl ) Do >>1990<< roku nie sprzedawał obrazów do "	adj:sg:gen:m3:pos	ign
 100443	"inni tak zwani bogacze . Nie >>Izrael<< ! Jezus powiedział , że "	subst:sg:acc:m3	subst:sg:nom:m3
-100463	"to ten sam Bóg ? Skandowano >>m.in<< . hasła Wolna Palestyna . "	brev:pun	brev:pun
 100465	"sam Bóg ? Skandowano m.in . >>hasła<< Wolna Palestyna . Poznań wydał "	subst:pl:acc:n	subst:sg:gen:n
 100476	"wydał dotychczas na budowę wiaduktu Traugutta >>9,035<< mln zł . Jednak na "	num:pl:acc:m3:rec	ign
 100485	". Jednak na korcie popularny " >>Guga<< " nie potrafił zrealizować tych "	subst:sg:nom:m1	ign
@@ -11415,7 +11372,6 @@
 100554	"( motyw włoskich nurków ) czy >>zabronione<< ? - Jest czwarta dwadzieścia "	ppas:sg:nom:n:perf:aff	ppas:pl:nom:f:perf:aff
 100566	". Musimy się zabezpieczyć , jak >>radził<< Bazarek . Potrząsnął głową , "	praet:sg:m1:imperf:nagl,praet:sg:m1:imperf:agl	praet:sg:m3:imperf:agl,praet:sg:m3:imperf:nagl
 100567	"Musimy się zabezpieczyć , jak radził >>Bazarek<< . Potrząsnął głową , odchrząknął "	subst:sg:nom:m1	subst:sg:nom:m3
-100576	"głową , odchrząknął . W temacie >>p.t<< . : Czy " kanibale "	brev:pun	brev:pun
 100588	"" leczą ? Nie przeszkadza im >>to<< uczestniczyć we mszy świętej . "	subst:sg:nom:n	subst:sg:acc:n
 100594	"to uczestniczyć we mszy świętej . >>Rozmawiał<< po prostu jak " kolega "	praet:sg:m2:imperf:agl,praet:sg:m2:imperf:nagl	praet:sg:m1:imperf:nagl,praet:sg:m1:imperf:agl
 100642	"Polski . U Wyspiańskiego znajdujemy : >>ostrz<< ( zamiast : ostrze ) "	subst:sg:acc:m3	subst:sg:nom:m3
@@ -12140,7 +12096,6 @@
 107385	". – a w siedemdziesiątych latach >>jakie<< były płace . - Tak "	adj:pl:nom:f:pos	adj:pl:nom:m3:pos
 107427	"domu . Kiedy sięgnął po kolejne >>dramatis<< personae , Konrad , nie "	subst:pl:acc:f	ign
 107428	". Kiedy sięgnął po kolejne dramatis >>personae<< , Konrad , nie przerywając "	subst:pl:acc:f	ign
-107472	"trzy miesiące na wykonanie prac polegających >>m.in<< . na wycenie wartości nieruchomości "	brev:pun	brev:pun
 107476	"prac polegających m.in . na wycenie >>wartości<< nieruchomości , do których spółka "	subst:pl:gen:f	subst:sg:gen:f
 107477	"polegających m.in . na wycenie wartości >>nieruchomości<< , do których spółka ma "	subst:pl:gen:f	subst:sg:gen:f
 107490	"lub będzie miała prawo , a >>także<< ocenie i weryfikacji wcześniejszego oszacowania "	conj	qub:wok,qub:nwok
@@ -12256,7 +12211,6 @@
 108675	"Najlepiej zilustruje to krótki dialog , >>jaki<< wywiązał się pomiędzy autorem i "	adj:sg:nom:m3:pos	adj:sg:acc:m3:pos
 108724	"moją skromną uwagę , że " >>Kulturze<< " nie przystoi umieszczać na "	subst:sg:dat:f	subst:sg:loc:f
 108729	"" Kulturze " nie przystoi umieszczać >>na<< jej łamach rynsztokowych dowcipów zaczerpniętych "	prep:loc:wok,prep:loc:nwok	prep:acc:nwok,prep:acc:wok
-108736	"jej łamach rynsztokowych dowcipów zaczerpniętych z >>c.k<< . koszarowego słownictwa . Obudzimy "	brev:pun	brev:pun
 108742	"c.k . koszarowego słownictwa . Obudzimy >>Anamarię<< o dwunastej . Miała rację "	subst:sg:acc:f	ign
 108753	"rację . Miał oczy suche i >>zaczerwienione<< , twarz zesztywniałą w napięciu "	ppas:pl:acc:n:perf:aff	ppas:pl:nom:n:perf:aff
 108761	"twarz zesztywniałą w napięciu , w >>oczekiwaniu<< czegoś - pięści zaciśnięte , "	ger:sg:loc:n:imperf:aff	subst:sg:loc:n
@@ -12614,7 +12568,6 @@
 111333	"miesiączka tzn . ból brzucha , >>zmiany<< nastroju . . . Liwus "	subst:pl:acc:f	subst:sg:gen:f
 111338	", zmiany nastroju . . . >>Liwus<< , Magdasf1 ma rację , "	subst:sg:nom:f	ign
 111340	"nastroju . . . Liwus , >>Magdasf1<< ma rację , lepiej dla "	subst:sg:nom:f	ign
-111386	"nich dostał ten tytuł , bo >>m.in<< . kocha Stalową Wolę . "	brev:pun	brev:pun
 111401	"dłuższa , bo nasza elektrownia obchodzi >>70-lecie<< istnienia – tak dwukrotnie usprawiedliwiał "	subst:sg:acc:n	ign
 111402	", bo nasza elektrownia obchodzi 70-lecie >>istnienia<< – tak dwukrotnie usprawiedliwiał liczbę "	ger:sg:gen:n:imperf:aff	subst:sg:gen:n
 111412	"usprawiedliwiał liczbę kandydatów do tytułu Stanisław >>Cisek<< , przewodniczący Rady Miejskiej i "	subst:sg:nom:m1	ign
@@ -13042,8 +12995,6 @@
 115344	"końca XIV w . rozbud . >>w<< 1491 , o ozdobnym , "	prep:loc:nwok	prep:acc:nwok
 115345	"XIV w . rozbud . w >>1491<< , o ozdobnym , późnogotyckim "	adj:sg:loc:m3:pos	ign
 115357	"szczycie . Domy towarowe : " >>Elektroland<< '' , dom meblowy " "	subst:sg:nom:m3	ign
-115358	". Domy towarowe : " Elektroland >>''<< , dom meblowy " Ikea "	interp	interp
-115364	"'' , dom meblowy " Ikea >>''<< ( największy dom towarowy w "	interp	interp
 115377	") oraz wielobranżowe centrum handlowe " >>Janki<< . Trasa główna biegnie w "	subst:pl:nom:n	ign
 115389	"w dalszym ciągu na pd . >>zach<< . Brama Bańska i fragmenty "	brev:pun	ign
 115394	". zach . Brama Bańska i >>fragmenty<< murów miejskich XIV i XV "	subst:pl:nom:m3	subst:pl:acc:m3
@@ -13547,7 +13498,6 @@
 119425	"i czeskiego kolegi szef węgierskiej dyplomacji >>Laszlo<< Kovacs . Poseł Dariusz Grabowski "	subst:sg:nom:m1	ign
 119426	"czeskiego kolegi szef węgierskiej dyplomacji Laszlo >>Kovacs<< . Poseł Dariusz Grabowski uzależnił "	subst:sg:nom:m1	ign
 119433	". Poseł Dariusz Grabowski uzależnił podjęcie >>decyzji<< przez ROP od odpowiedzi na "	subst:sg:gen:f	subst:pl:gen:f
-119442	"od odpowiedzi na kilka pytań , >>m.in<< . jaki będzie wpływ podwyżek "	brev:pun	brev:pun
 119471	"roku osiągnęli śmy poziom konsumpcji z >>1989<< roku . Ustawa , jeżeli "	adj:sg:gen:m3:pos	ign
 119492	"roszczeń Sybiraków , gdyż nie są >>one<< skutkiem decyzji nacjonalizacyjnych . W "	ppron3:pl:nom:n:ter:akc:npraep	ppron3:pl:nom:m3:ter:akc:npraep
 119516	"wykonana . Jak pan chce . >>Primakow<< powiedział , że to , "	subst:sg:nom:m1	ign
