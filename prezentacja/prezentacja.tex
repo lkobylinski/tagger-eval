@@ -55,8 +55,23 @@
   \item porównanie dokładności i wykorzystywanych algorytmów z narzędziami dla innych języków europejskich,
   \item analiza jakościowa wyników działania poszczególnych tagerów,
   \item przegląd problemów, które nie zostały zaadresowane przez istniejące tagery,
+  \item stwierdzenie, czy wśród dostępnych narzędzi dostępny jest tager o pożądanych cechach (następny slajd),
   \item rekomendacje dotyczące dalszych kroków.
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Wprowadzenie}
+  \structure{Cechy pożądanego tagera (M. Woliński)}
+  \vspace{0.5cm}
+
+  Chciałbym tager, który:
+   \begin{itemize}
+   \item nie jest nadgorliwy, można kazać zostawić interpretacje częściowo nieujednoznacznione (np. usunąć tylko bardzo złe interpretacje),
+   \item informuje o~poziomie pewności podjętych decyzji,
+   \item działa na niejednoznacznej segmentacji (stworzonej przez Morfeusza lub np. będącej wynikiem zastosowania po Morfeuszu słownika wyrażeń wieloczłonowych),
+   \item daje się (względnie?) łatwo zainstalować i uruchomić na wszystkich platformach, na których jest Morfeusz,
+   \item da się rozszerzyć o uwzględnianie informacji o czasie powstania tekstu.
+   \end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -125,6 +140,14 @@ lub symboli. Segmenty są ciągłe oraz rozłączne.
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Tager Brilla -- zasada działania}
+  TODO
+\end{frame}
+
+\begin{frame}{Tager CRF -- zasada działania}
+  TODO
+\end{frame}
+
 \begin{frame}{Przenośność i łatwość wykorzystania}
   \begin{itemize}
     \item \structure{Concraft} instalowany i uruchamiany z wykorzystaniem Haskell Platform, która dostępna jest pod wszystkie główne systemy operacyjne,
@@ -134,6 +157,47 @@ lub symboli. Segmenty są ciągłe oraz rozłączne.
   \vspace{1cm}
 
   \structure{Concraft, WCRFT, WMBT} -- silnie zależą od stosu Corpus2 / Toki / Maca, których kompilacja pod Windows jest możliwa, ale nietrywialna (Visual Studio).
+\end{frame}
+
+\section{Tagery morfosyntaktyczne dla innych języków europejskich}
+\frame{\sectionpage}
+
+\begin{frame}{Tagowanie języka angielskiego}
+  \footnotesize
+  \begin{tabular}{cp{3.5cm}p{2.5cm}c}
+    System name & Short description & Main publication & All tokens \\ \hline
+    BI-LSTM-CRF & Bidirectional LSTM-CRF Model & Huang et al. (2015) & 97.55 \\ \hline
+    SCCN & Semi-supervised condensed nearest neighbor & Søgaard (2011) & 97.50 \\ \hline
+    Morče/COMPOST & Averaged Perceptron & Spoustová et al. (2009) & 97.44 \\ \hline
+    structReg & CRFs with structure regularization & Sun(2014) & 97.36 \\ \hline
+    LTAG-spinal & Bidirectional perceptron learning & Shen et al. (2007) & 97.33 \\ \hline
+    Stanford Tagger 2.0 & Maximum entropy cyclic dependency network & Manning (2011) & 97.32 \\ \hline
+    Stanford Tagger 2.0 & Maximum entropy cyclic dependency network & Manning (2011) & 97.29 \\ \hline
+    Stanford Tagger 1.0 & Maximum entropy cyclic dependency network & Toutanova et al. (2003) & 97.24 \\ \hline
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Tagowanie języka angielskiego}
+  \footnotesize
+  \begin{tabular}{cp{3.5cm}p{2.5cm}c}
+    System name & Short description & Main publication & All tokens \\ \hline
+    Morče/COMPOST & Averaged Perceptron & Spoustová et al. (2009) & 97.23 \\ \hline
+    LAPOS & Perceptron based training with lookahead & Tsuruoka, Miyao, and Kazama (2011) & 97.22 \\ \hline
+    SVMTool & SVM-based tagger and tagger generator & Giménez and Márquez (2004) & 97.16 \\ \hline
+    Maxent easiest-first & Maximum entropy bidirectional easiest-first inference & Tsuruoka and Tsujii (2005) & 97.15 \\ \hline
+    Averaged Perceptron & Averaged Perception discriminative sequence model & Collins (2002) & 97.11 \\ \hline
+    GENiA Tagger** & Maximum entropy cyclic dependency network & Tsuruoka, et al (2005) & 97.05 \\ \hline
+    MElt & MEMM with external lexical information & Denis and Sagot (2009) & 96.96 \\ \hline
+    TnT* & Hidden markov model & Brants (2000) & 96.46 \\ \hline
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Tagowanie języka słoweńskiego}
+  TODO
+\end{frame}
+
+\begin{frame}{Tagowanie języka czeskiego}
+  TODO
 \end{frame}
 
 \section{Tagery języka polskiego -- analiza ilościowa}
@@ -208,6 +272,27 @@ comp & 17842 & 97,26 & 97,29 & 96,84 & 96,88 \\
 num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
 \end{tabular}
 \end{center}
+\end{frame}
+
+\begin{frame}{Rozmiar danych treningowych}
+  \structure{TnT Tagger} -- NEGRA corpus, 30 000 tokenów testowych.
+  \begin{center}
+    \includegraphics[width=\textwidth]{img/tnt_lcurve.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Rozmiar danych treningowych}
+  \structure{MBT Tagger} -- WSJ corpus, kroswalidacja krzyżowa
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/mbt_lcurve.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Rozmiar danych treningowych}
+  \structure{Concraft} -- NKJP 1M, 100 000 tokenów testowych.
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/concraft_lcurve.png}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Problem niejednoznaczności segmentacji}
@@ -432,20 +517,6 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
 
 \begin{frame}{Problem lematyzacji}
 \end{frame}
-
-\section{Tagery morfostynaktyczne innych języków}
-\frame{\sectionpage}
-
-\begin{frame}{jakie rozwiązania są możliwe - jakie były na świecie}
-  TODO
-\end{frame}
-
-\begin{frame}{jak wzrasta jakość tagowania wraz ze wzrostem ilości danych}
-  TODO
-\end{frame}
-
-% ile razy się zgadzają, równowaga, przewaga, różne
-% w ile procentach są wszystkie poprawne, większość poprawna, mniejszość poprawna, żaden nie jest poprawny
 
 \section{Tagery języka polskiego -- analiza jakościowa}
 \frame{\sectionpage}
