@@ -8,11 +8,12 @@
 }
 \usefonttheme[onlylarge]{structurebold}
 \usepackage[polish]{babel}
+%\usepackage[OT1]{polski}
 \usepackage[utf8]{inputenc}
 %\setbeameroption{show notes}
 %
 %\usepackage{times}
-%\usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage{ae}
 \usepackage{tikz}
 \usepackage{ulem}
@@ -456,8 +457,8 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
         kimś & 42 \\
         gdybym & 40 \\
         udziałem & 40 \\
-        żebym & 39 \\
-        żebyś & 34 \\
+        %żebym & 39 \\
+        %żebyś & 34 \\
       \end{tabular}
     \end{center}
     \column{.3\textwidth}
@@ -467,7 +468,7 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
         komuś & 31 \\
         gdybyśmy & 19 \\
         tom & 19 \\
-        żebyśmy & 12 \\
+        %żebyśmy & 12 \\
         gdybyś & 7 \\
         działam & 6 \\
         jam & 5 \\
@@ -489,7 +490,7 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
         rozdziałem & 2 \\
         wyłom & 2 \\
         bom & 2 \\
-        żebyście & 2 \\
+        %żebyście & 2 \\
         coście & 1 \\
         czyżbyś & 1 \\
         czyżem & 1 \\
@@ -502,17 +503,87 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
 \end{frame}
 
 \begin{frame}{Problem niejednoznaczności segmentacji}
-  \structure{Możliwe rozwiązania: tagset pośredni}
-  Pomysł od Adama Radziszewskiego
+  \structure{Możliwe rozwiązania: tagset pośredni (A. Radziszewski)}
+  Wprowadźmy tagset pośredni, który pozwoli uniknąć części niejednoznaczności
+  \begin{center}
+  \begin{tikzpicture}[auto,xscale=3,place/.style={circle,draw=blue!50,fill=blue!20,thick,
+inner sep=0pt,minimum size=6mm},
+transition/.style={rectangle,draw=black!50,fill=black!20,thick,
+inner sep=0pt,minimum size=4mm}]
+    \node[transition,label=2] (interm) at (1,1) {};
+    \node[transition,label=below:1] (beg) at (0,0) {};
+    \node[transition,label=below:3] (end) at (2,0) {};
+    \draw (beg) to node {\footnotesize piekłem/subst:sg:inst:m3} (end);
+    \draw (beg) to node {\footnotesize piekł/praet:sg:m1.m2.m3:imperf} (interm);
+    \draw (interm) to node {\footnotesize em/aglt:sg:pri:imperf:wok} (end);
+    \end{tikzpicture}
+  \end{center}
+
+  piekłem\\
+  \hspace{1cm}piec    fin:sg:m1:pri:imperf:prt\\
+  \hspace{1cm}piec    fin:sg:m2:pri:imperf:prt\\
+  \hspace{1cm}piec    fin:sg:m3:pri:imperf:prt\\
+  \hspace{1cm}piekło  subst:sg:inst:n\\
 \end{frame}
 
 \begin{frame}{Problem niejednoznaczności segmentacji}
-  \structure{Możliwe rozwiązania: dostosowanie metody uczenia maszynowego do reprezentacji grafowej}
-  Pomysł od Jakuba Waszczuka - CRFy
+  \structure{Możliwe rozwiązania: tagset pośredni}\\
+  Rozwiązanie analogiczne do trypu $-p\ composite$ w Morfeuszu 2:
+  \vspace{0.5cm}
+
+  \$ echo piekłem | morfeusz\_analyzer\\
+  {[}0,1,piekł,piec:v,praet:sg:m1.m2.m3:imperf,\_,\_{]}\\
+  {[}0,2,piekłem,piekło,subst:sg:inst:n2,pospolita,\_{]}\\
+  {[}1,2,em,być,aglt:sg:pri:imperf:wok,\_,\_{]}\\
+  \vspace{0.5cm}
+
+  \$ echo piekłem | morfeusz\_analyzer $-$p composite\\
+  {[}0,1,piekłem,piec:v,praet:sg:m1.m2.m3:pri:imperf,\_,\_
+  0,1,piekłem,piekło,subst:sg:inst:n2,pospolita,\_{]}
+\end{frame}
+
+\begin{frame}{Problem niejednoznaczności segmentacji}
+  \structure{Możliwe rozwiązania: dostosowanie tagera do przetwarzania DAGów}
+  \vspace{0.5cm}
+
+  Na przykład, dla tagera Concraft: konieczna jest modyfikacja całego stosu przetwarzania:
+  \begin{itemize}
+    \item modyfikacja istniejących formatów zapisu korpusów (XML, Plain),
+    \item modyfikacja narzędzi: Corpus2, Maca,
+    \item reimplementacja algorytmu w tagerze, aby był w stanie przetwarzać dane w reprezentacji grafowej.
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Poziom pewności ujednoznaczniania morfosyntaktycznego}
-  Concraft - marginals
+  \structure{Oczekujemy, że: tager informuje o~poziomie pewności podjętych decyzji}\\
+  Tagery oparte na metodach uczenia maszynowego mogą zwracać prawdopodobieństwa brzegowe wyboru poszczególnych interpretacji.
+  \vspace{0.25cm}
+
+  Implementacja w Concraft:\\
+  $\$ \textasciitilde/.cabal/bin/concraft-pl\ tag\ -m\ model.gz\ <\ test.plain$
+  \begin{columns}[t]
+    \column{0.5\textwidth}
+  \scriptsize
+  rzucała space\\
+  \hspace{1cm}rzucać  praet:sg:f:imperf 1.000\\
+  światło space\\
+  \hspace{1cm}światło adv:pos 0.000\\
+  \hspace{1cm}światło subst:sg:acc:n  0.929\\
+  \hspace{1cm}światło subst:sg:nom:n  0.071\\
+  \hspace{1cm}światło subst:sg:voc:n  0.000\\
+  \column{0.5\textwidth}
+  \scriptsize
+  tylko space\\
+  \hspace{1cm}Tylka   subst:sg:voc:f  0.000\\
+  \hspace{1cm}tylko   conj    0.209\\
+  \hspace{1cm}tylko   qub     0.791\\
+  na    space\\
+  \hspace{1cm}na      interj  0.000\\
+  \hspace{1cm}na      prep:acc        1.000\\
+  \hspace{1cm}na      prep:loc        0.000\\
+  podłogę space\\
+  \hspace{1cm}podłoga subst:sg:acc:f  1.000\\
+\end{columns}
 \end{frame}
 
 \begin{frame}{Problem lematyzacji}
@@ -521,6 +592,9 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
 \section{Tagery języka polskiego -- analiza jakościowa}
 \frame{\sectionpage}
 
+\begin{frame}{TODO}
+\end{frame}
+
 \section{Dyskusja i rekomendacje}
 \frame{\sectionpage}
 
@@ -528,7 +602,7 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
   \structure{Obecnie funkcjonują równolegle dwa tagsety języka polskiego}
   \begin{itemize}
     \item tagset NKJP, używany do anotacji korpusu, a także w większości innych zasobów językowych,
-    \item tagset SGJP, używany w słowniku Morfologicznym i w Morfeuszu.
+    \item tagset Morfeusza.
   \end{itemize}
   \vspace{0.5cm}
 
