@@ -19,6 +19,9 @@
 \usepackage{ulem}
 \usepackage{color}
 %
+\usetikzlibrary{positioning}
+\usetikzlibrary{backgrounds}
+%
 \newcommand{\marked}[1]{{\bf #1}}
 \newcommand{\markerr}[1]{\textcolor{red}{#1}}
 %
@@ -98,28 +101,83 @@ lub symboli. Segmenty są ciągłe oraz rozłączne.
 \end{frame}
 
 \begin{frame}{Pełny stos przetwarzania}
-  \begin{columns}[c]
-    \column{.5\textwidth}
-    \begin{center}
-  TAGOWANIE
-  Podział na tokeny - Toki
-  Analiza morfosyntaktyczna - Maca + Morfeusz
-  Ujednoznacznianie morfosyntaktyczne
-\end{center}
-\column{.5\textwidth}
-\begin{center}
-  UCZENIE
-  Ponowna analiza morfosyntaktyczna otagowanego tekstu - Toki + Maca + Morfeusz + synchronizacja
-  Uczenie modelu statystycznego na podstawie wzorca
-\end{center}
-\end{columns}
+  \begin{center}
+  \begin{tikzpicture}[scale=0.8,
+  akcja/.style={
+  % The shape:
+  rectangle,
+  % The size:
+  %minimum size=6mm,
+  text width=3cm,
+  % The border:
+  very thick,
+  draw=red!50!black!50, % 50% red and 50% black,
+  % and that mixed with 50% white
+  % The filling:
+  top color=white, % a shading that is white at the top...
+  bottom color=red!50!black!20, % and something else at the bottom
+  % Font
+  %font=\itshape
+  scale=0.8
+  },
+  zasob/.style={
+  % The shape:
+  rectangle,
+  % The size:
+  minimum size=6mm,
+  %text width=3cm,
+  % The border:
+  thick,
+  draw=green!50!black!50, % 50% red and 50% black,
+  % and that mixed with 50% white
+  % The filling:
+  top color=white, % a shading that is white at the top...
+  %bottom color=red!50!black!20, % and something else at the bottom
+  % Font
+  %font=\itshape
+  scale=0.8
+  }]
+  \node (T1) [akcja] {Podział na tokeny};
+  \node (txtT) [zasob,above=of T1] {Czysty tekst};
+  \node (T2) [akcja,below=of T1] {Analiza morfosyntaktyczna};
+  \node (T3) [akcja,below=of T2] {Ujednoznacznianie\\ morfosyntaktyczne};
+
+  \draw[->] (txtT) to (T1);
+  \draw[->] (T1) to node {Toki} (T2);
+  \draw[->] (T2) to node {Morfeusz + Maca} (T3);
+
+  \node (txtL) [zasob,right=of T1] {Czysty tekst};
+  \node (wzorzec) [zasob,below=of txtL] {Wzorzec};
+
+  \node (L1) [akcja,right=of txtL] {Podział na tokeny};
+  \node (L2) [akcja,below=of L1] {Analiza morfosyntaktyczna};
+  \node (L3) [akcja,below=of L2] {Synchronizacja z wzorcem};
+  \node (L4) [akcja,below=of L3] {Uczenie modelu statystycznego};
+  \draw[->] (L1) to node {Toki} (L2);
+  \draw[->] (L2) to node {Morfeusz + Maca} (L3);
+  \draw[->] (L3) to (L4);
+
+  \draw[->] (wzorzec) to (txtL);
+  \draw[->] (txtL) to (L1);
+  \draw[<->] (L3) to (wzorzec);
+
+  \node (model) [zasob,left=of L4] {model};
+  \draw[->] (L4) to (model);
+  \draw[->] (model) to (T3);
+  \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Tagery morfostynaktyczne dla języka polskiego}
-\structure{Tagery historyczne}
+\structure{Tagery ,,archiwalne''}
+\vspace{0.5cm}
+
+Dostosowane do tagsetu IPI PAN, modele uczone na korpusie IPI.
 \begin{itemize}
-\item tager Łukasza Dębowskiego,
-\item TaKIPI.
+\item tager Ł. Dębowskiego -- statystyczny tager trigramowy,\\
+$weak\ correctness = 90,59\%$
+\item TaKIPI -- tager hybrydowy, oparty na drzewach decyzyjnych, częstości unigramów i ręcznie utworzonych regułach.\\
+$weak\ correctness = 91.30\%$
 \end{itemize}
 \end{frame}
 
@@ -136,8 +194,9 @@ lub symboli. Segmenty są ciągłe oraz rozłączne.
 \begin{frame}{Tagery morfostynaktyczne dla języka polskiego}
 \structure{Modele dla tagerów zaimplementowanych dla innych języków}
 \begin{itemize}
-\item TnT Tagger
-\item OpenNLP
+\item TnT Tagger -- statystyczny tager trigramowy, model dla PL przygotowany przez M. Miłkowskiego,\\
+dokładność ,,ok. 88\%'',
+\item OpenNLP -- tager maksimum entropii, model dla PL przygotowany przez P. Pęzika (nie jest udostępniony publicznie).
 \end{itemize}
 \end{frame}
 
@@ -637,6 +696,34 @@ inner sep=0pt,minimum size=4mm}]
 
 \begin{frame}{Struktura danych treningowych w NKJP1M}
   TODO
+\end{frame}
+
+\begin{frame}{Podsumowanie}
+  \structure{Cechy pożądanego tagera (M. Woliński)}
+  \vspace{0.5cm}
+
+  TODO Chciałbym tager, który:
+   \begin{itemize}
+   \item nie jest nadgorliwy, można kazać zostawić interpretacje częściowo nieujednoznacznione (np. usunąć tylko bardzo złe interpretacje),
+   obecnie: każdy
+   \item informuje o~poziomie pewności podjętych decyzji,
+   obecnie: Concraft, możliwe: WCRFT, WMBT
+   \item działa na niejednoznacznej segmentacji (stworzonej przez Morfeusza lub np. będącej wynikiem zastosowania po Morfeuszu słownika wyrażeń wieloczłonowych),
+   obecnie: tylko tagset pośredni, możliwe: w każdym po modyfikacjach całego stosu
+   \end{itemize}
+\end{frame}
+
+\begin{frame}{Podsumowanie (2)}
+  \structure{Cechy pożądanego tagera (M. Woliński)}
+  \vspace{0.5cm}
+
+  TODO Chciałbym tager, który:
+   \begin{itemize}
+    \item daje się (względnie?) łatwo zainstalować i uruchomić na wszystkich platformach, na których jest Morfeusz,
+    obecnie: ograniczeniem jest Maca
+    \item da się rozszerzyć o uwzględnianie informacji o czasie powstania tekstu.
+    obecnie: żaden, możliwe: w każdym jako cecha ML
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{Podziękowania}
