@@ -76,10 +76,10 @@
 \structure{Cele prezentacji}
 \begin{itemize}
   \item podsumowanie obecnego stanu narzędzi do tagowania morfosyntaktycznego w języku polskim,
-  \item porównanie dokładności i wykorzystywanych algorytmów z narzędziami dla innych języków europejskich,
+  \item porównanie dokładności i~wykorzystywanych algorytmów z~narzędziami dla innych języków europejskich,
   \item analiza jakościowa wyników działania poszczególnych tagerów,
   \item przegląd problemów, które nie zostały rozwiązane przez istniejące tagery,
-  \item stwierdzenie, czy wśród dostępnych narzędzi istnieje tager o pożądanych cechach,% (następny slajd),
+  \item stwierdzenie, czy wśród dostępnych narzędzi istnieje tager o~pożądanych cechach,% (następny slajd),
   \item rekomendacje dotyczące dalszych kroków.
 \end{itemize}
 \end{frame}
@@ -93,8 +93,8 @@
    \item nie jest nadgorliwy, można kazać zostawić interpretacje częściowo nieujednoznacznione (np. usunąć tylko bardzo złe interpretacje),
    \item informuje o~poziomie pewności podjętych decyzji,
    \item działa na niejednoznacznej segmentacji (stworzonej przez Morfeusza lub np. będącej wynikiem zastosowania po Morfeuszu słownika wyrażeń wieloczłonowych),
-   \item daje się (względnie?) łatwo zainstalować i uruchomić na wszystkich platformach, na których jest Morfeusz,
-   \item da się rozszerzyć o uwzględnianie informacji o czasie powstania tekstu.
+   \item daje się (względnie?) łatwo zainstalować i~uruchomić na wszystkich platformach, na których jest Morfeusz,
+   \item da się rozszerzyć o~uwzględnianie informacji o~czasie powstania tekstu.
    \end{itemize}
 \end{frame}
 
@@ -121,7 +121,7 @@ lub symboli. Segmenty są ciągłe oraz rozłączne.
 \end{frame}
 
 \begin{frame}{Pełny stos przetwarzania}
-  \vspace{-0.25cm}
+\vspace{-0.25cm}
   \begin{center}
   \begin{tikzpicture}[scale=0.8,
   akcja/.style={
@@ -172,7 +172,7 @@ lub symboli. Segmenty są ciągłe oraz rozłączne.
 
   \node (L1) [akcja,right=of txtL] {Podział na tokeny};
   \node (L2) [akcja,below=of L1] {Analiza morfosyntaktyczna};
-  \node (L3) [akcja,below=of L2] {Synchronizacja z wzorcem};
+  \node (L3) [akcja,below=of L2] {Synchronizacja z~wzorcem};
   \node (L4) [akcja,below=of L3] {Uczenie modelu statystycznego};
   \draw[->] (L1) to node {Toki} (L2);
   \draw[->] (L2) to node {Morfeusz + Maca} (L3);
@@ -189,7 +189,7 @@ lub symboli. Segmenty są ciągłe oraz rozłączne.
   \end{center}
 \end{frame}
 
-\begin{frame}{Tagery morfosyyntaktyczne dla języka polskiego}
+\begin{frame}{Tagery morfosyntaktyczne dla języka polskiego}
 \structure{Tagery ,,archiwalne''}
 \vspace{0.5cm}
 
@@ -197,7 +197,7 @@ Dostosowane do tagsetu IPI PAN, modele uczone na korpusie IPI.
 \begin{itemize}
 \item tager Ł. Dębowskiego -- statystyczny tager trigramowy,\\
 $weak\ correctness = 90,59\%$
-\item TaKIPI -- tager hybrydowy, oparty na drzewach decyzyjnych, częstości unigramów i ręcznie utworzonych regułach.\\
+\item TaKIPI -- tager hybrydowy, oparty na drzewach decyzyjnych, częstości unigramów i~ręcznie utworzonych regułach.\\
 $weak\ correctness = 91.30\%$
 \end{itemize}
 \end{frame}
@@ -206,8 +206,8 @@ $weak\ correctness = 91.30\%$
 \structure{Tagery uwzględniające tagset NKJP}
 \begin{itemize}
 \item Pantera [Acedański 2010] -- adaptacja algorytmu Brilla do języków bogatych morfologicznie, takich jak polski,
-\item WMBT [Radziszewski and Śniatowski 2011] -- tager oparty na uczeniu pamięciowym, rozbudowany o wielowarstwowość dla uwzględnienia wielu atrybutów znakowania w języku polskim,
-\item Concraft [Waszczuk 2012] -- tager warstwowy, oparty na Conditional Random Fields (CRF); wyniki dezambiguacji morfosyntaktycznej przekazywane są z jednej warstwy do drugiej,
+\item WMBT [Radziszewski and Śniatowski 2011] -- tager oparty na uczeniu pamięciowym, rozbudowany o~wielowarstwowość dla uwzględnienia wielu atrybutów znakowania w języku polskim,
+\item Concraft [Waszczuk 2012] -- tager warstwowy, oparty na Conditional Random Fields (CRF); wyniki dezambiguacji morfosyntaktycznej przekazywane są z~jednej warstwy do drugiej,
 \item WCRFT [Radziszewski 2013] -- również oparty na CRF; osobne modele wykorzystywane są do dezambiguacji poszczególnych atrybutów opisu morfosyntaktycznego,
 \end{itemize}
 \end{frame}
@@ -233,21 +233,21 @@ dokładność ,,ok. 88\%'',\\
 \end{itemize}
 \begin{tabular}{p{8cm}|r|r}
 r & good(r) & bad(r) \\ \hline
-Zmień przypadek przyimka z \texttt{acc} na \texttt{loc}, jeśli kończy
-się na \texttt{na} i jeden z kolejnych tokenów jest w przypadku
+Zmień przypadek przyimka z~\texttt{acc} na \texttt{loc}, jeśli kończy
+się na \texttt{na} i~jeden z~kolejnych tokenów jest w przypadku
 \texttt{loc}. & 2496 & 113 \\ \hline
-Zmień przypadek przymiotnika z \texttt{loc} na \texttt{inst}, jeśli jeden z kolejnych tokenów ma przypadek \texttt{inst} i~kończy się na \texttt{em}. & 921 & 29 \\ \hline
+Zmień przypadek przymiotnika z~\texttt{loc} na \texttt{inst}, jeśli jeden z~kolejnych tokenów ma przypadek \texttt{inst} i~kończy się na \texttt{em}. & 921 & 29 \\ \hline
 \end{tabular}
 \end{frame}
 
 \begin{frame}{Tager Brilla -- przykładowe reguły}
 \structure{Transformacje}
-Zachodzą według jednego z szablonów:
+Zachodzą według jednego z~szablonów:
 \begin{itemize}
   \item $t_i := A\ if\ t_i = B \land \exists_{o \in O_1} t_{i+o} = C$
   \item $t_i := A\ if\ t_i = B \land \forall_{o \in O_2} t_{i+o} = D$
-  \item $t_i := A\ if\ t_i = B$ i $i-$te słowo jest z wielkiej litery
-  \item $t_i := A\ if\ t_i = B$ i $(i-1)-$te słowo jest z wielkiej litery
+  \item $t_i := A\ if\ t_i = B$ i $i-$te słowo jest z~wielkiej litery
+  \item $t_i := A\ if\ t_i = B$ i $(i-1)-$te słowo jest z~wielkiej litery
 \end{itemize}
 gdzie:
 \begin{itemize}
@@ -264,7 +264,7 @@ gdzie:
   \end{center}
 \end{frame}
 
-\begin{frame}{WCRFT i Concraft -- zasada działania}
+\begin{frame}{WCRFT i~Concraft -- zasada działania}
 \begin{columns}[t]
   \column{0.5\textwidth}
   \structure{WCRFT}
@@ -283,10 +283,10 @@ gdzie:
 \end{columns}
 \end{frame}
 
-\begin{frame}{Przenośność i łatwość wykorzystania}
+\begin{frame}{Przenośność i~łatwość wykorzystania}
   \begin{itemize}
-    \item \structure{Concraft} instalowany i uruchamiany z wykorzystaniem Haskell Platform, która dostępna jest pod wszystkie główne systemy operacyjne,
-    \item \structure{WCRFT, Pantera} -- wymagają kompilacji, proces kompilacji dostosowany do środowiska Linuksowego,
+    \item \structure{Concraft} instalowany i~uruchamiany z~wykorzystaniem Haskell Platform, która dostępna jest pod wszystkie główne systemy operacyjne,
+    \item \structure{WCRFT, Pantera} -- wymagają kompilacji, proces kompilacji dostosowany do środowiska linuksowego,
     \item \structure{WMBT} -- Python.
   \end{itemize}
   \vspace{1cm}
@@ -297,16 +297,31 @@ gdzie:
 %\section{Tagery morfosyntaktyczne dla innych języków europejskich}
 %\frame{\sectionpage}
 
+\begin{frame}{Tagery języków europejskich -- porównanie}
+  \begin{center}
+  \begin{tabular}{l|l|r|r|r}
+    Tager       & Język     & Rozmiar & Korpus  & Dokładność \\
+                &           & tagsetu & treningowy & \\ \hline
+    Concraft    & polski    & 4 000 / 1 000 & 1M    & 91,07\% \\
+    Obeliks     & słoweński & 1 903 & 500k  & 91,34\% \\
+    Morče       & czeski    & 3 922 / 1 571 & 2M    & 95,67\% \\
+    Featurama   & czeski    & 3 922 / 1 571 & 2M    & 95,66\% \\
+    Morphodita  & czeski    & 3 922 / 1 571 & 2M    & 95,75\% \\
+    BI-LSTM-CRF & angielski & 36+12   & 1M   & 97,55\% \\
+  \end{tabular}
+  \end{center}
+\end{frame}
+
 \section{Tagery języka polskiego -- analiza ilościowa}
 \frame{\sectionpage}
 
 \begin{frame}{Metoda ewaluacji}
 \structure{Miara jakości znakowania}
 \begin{itemize}
-\item ze względu na możliwość wystąpienia różnic w segmentacji pomiędzy wynikiem znakowania, a złotym standardem, wykorzystujemy dolne ograniczenie trafności (\emph{accuracy lower bound}, $Acc_{lower}$) do oceny dokładności tagerów,
-\item miara ta karze wszelkie zmiany segmentacyjne w stosunku do złotego standardu i traktuje takie tokeny jako sklasyfikowane błędnie,
+\item ze względu na możliwość wystąpienia różnic w segmentacji pomiędzy wynikiem znakowania a~złotym standardem, wykorzystujemy dolne ograniczenie trafności (\emph{accuracy lower bound}, $Acc_{lower}$) do oceny dokładności tagerów,
+\item miara ta karze wszelkie zmiany segmentacyjne w stosunku do złotego standardu i~traktuje takie tokeny jako sklasyfikowane błędnie,
 \item token traktowany jest jako oznakowany prawidłowo, jeśli zbiór jego interpretacji ma niepuste przecięcie ze zbiorem interpretacji zwracanych przez tager,
-\item niezależne sprawdzamy dokładność dla znanych ($Acc^K_{lower}$) i nieznanych słów ($Acc^U_{lower}$), aby ocenić skuteczność ew. modułów odgadywania.
+\item niezależnie sprawdzamy dokładność dla znanych ($Acc^K_{lower}$) i~nieznanych słów ($Acc^U_{lower}$), aby ocenić skuteczność ew. modułów odgadywania.
 \end{itemize}
 \end{frame}
 
@@ -326,21 +341,6 @@ n & Tager 		& $Acc_{lower}$	& $Acc^K_{lower}$	& $Acc^U_{lower}$	\\ \hline
 \item $Acc^K_{lower}$ -- dokładność dla znanych słów,
 \item $Acc^U_{lower}$ -- dokładność dla słów nieznanych (2,8\% Morfeusz1, 1,6\% Morfeusz2).
 \end{itemize}
-\end{frame}
-
-\begin{frame}{Tagery języków europejskich -- porównanie}
-  \begin{center}
-  \begin{tabular}{l|l|r|r|r}
-    Tager       & Język     & Rozmiar & Korpus  & Dokładność \\
-                &           & tagsetu & treningowy & \\ \hline
-    Concraft    & polski    & 4 000 / 1 000 & 1M    & 91,07\% \\
-    Obeliks     & słoweński & 1 903 & 500k  & 91,34\% \\
-    Morče       & czeski    & 3 922 / 1 571 & 2M    & 95,67\% \\
-    Featurama   & czeski    & 3 922 / 1 571 & 2M    & 95,66\% \\
-    Morphodita  & czeski    & 3 922 / 1 571 & 2M    & 95,75\% \\
-    BI-LSTM-CRF & angielski & 36+12   & 1M   & 97,55\% \\
-  \end{tabular}
-  \end{center}
 \end{frame}
 
 \begin{frame}{Analiza rezultatu działania tagerów}
@@ -827,12 +827,12 @@ czterema tagerami w~zestawieniu z~ręcznym znakowaniem wzorcowym.
 \begin{frame}[fragile]{Różne tagsety dla języka polskiego?}
   \structure{Obecnie funkcjonują równolegle dwa tagsety języka polskiego}
   \begin{itemize}
-    \item tagset NKJP, używany do anotacji korpusu, a także w większości innych zasobów językowych,
+    \item tagset NKJP, używany do znakowania korpusu, a~także w wielu innych zasobach,
     \item tagset Morfeusza.
   \end{itemize}
   \vspace{0.5cm}
 
-  Skutkuje to sytuacją, w której w sposób niejawny dokonywana jest ciągła konwersja pomiędzy tagsetami:
+  W~efekcie w~sposób niejawny dokonywana jest ciągła konwersja pomiędzy tagsetami:
   \begin{columns}[c]
     \column{0.3\textwidth}
       \footnotesize
@@ -861,8 +861,24 @@ czterema tagerami w~zestawieniu z~ręcznym znakowaniem wzorcowym.
     \end{columns}
 \end{frame}
 
+
 \begin{frame}
   \frametitle{Dwa tagsety, dwa opisy}
+
+  \begin{itemize}
+  \item Z~technicznego punktu widzenia tagset Morfeusza i~tagset NKJP są
+    tożsame, bo — z~dokładnością do rodzajów gramatycznych — zawierają
+    ten sam zestaw znaczników.
+  \item W~praktyce jednak są różne, ponieważ tym samym formom
+    wyrazowym mogą przypisywać różne znaczniki.
+  \item W~efekcie tagery statystyczne, trenowane na korpusie NKJP1M,
+    nie zawsze są w~stanie zastosować to, czego się nauczyły.
+  \item Spójność danych treningowych ze słownikiem analizatora
+    wydaje się warunkiem niezbędnym do tego, by stosować metody
+    uczenia maszynowego.
+  \end{itemize}
+
+
 \end{frame}
 
 
@@ -941,7 +957,7 @@ czterema tagerami w~zestawieniu z~ręcznym znakowaniem wzorcowym.
     \setlength{\tabcolsep}{2pt}
     \begin{tabular}{rl}
 \rowcolor{Gray}      przekładała & \alert<2->{\textbf{paczki}} \texttt{[paczek:subst:pl:acc:m3]}
-       z ręki do ręki\\ %przest. gwar.
+       z~ręki do ręki\\ %przest. gwar.
       W~Krakowie, w~& \textbf{krypcie}
       \texttt{[krypeć:subst:pl:acc:m3]} pod kościołem księży
       pijarów\\ %brak kwal.
@@ -1025,13 +1041,13 @@ pasjonuje się nie & \textbf{wężami} \texttt{[subst:pl:inst:m3]}, lecz psami \
 ocenia się długość życia & \textbf{gwarków} \texttt{[subst:pl:gen:m3]} na piętnaście\\
 \rowcolor{Gray} do pełnienia funkcji & \textbf{kapelanów}
 \texttt{[subst:pl:gen:m2]} wojskowych\\
-z dwójką takich wiesz & \textbf{maluchów} \texttt{[subst:pl:gen:m2]} .\\
+z~dwójką takich wiesz & \textbf{maluchów} \texttt{[subst:pl:gen:m2]} .\\
 \rowcolor{Gray} pomagała przy doręczaniu & \textbf{klientom} \texttt{[subst:pl:dat:m2]} towarów\\
-koncert folkowo-rockowej Kapeli — & \textbf{górali} \texttt{[subst:pl:gen:m2]} z Żywca\\
+koncert folkowo-rockowej Kapeli — & \textbf{górali} \texttt{[subst:pl:gen:m2]} z~Żywca\\
 \rowcolor{Gray} Ojciec mojej przyjaciółki był & \textbf{admirałem}
 \texttt{[subst:sg:inst:m2]}, mąż kontradmirałem\\
-przechodził ten & \textbf{bokser} \texttt{[subst:sg:acc:m3]} z drugiego piętra \\
-\rowcolor{Gray} ten wątek jest jak & \textbf{smok} \texttt{[subst:sg:nom:m3]} z głowami , które odrastają\\
+przechodził ten & \textbf{bokser} \texttt{[subst:sg:acc:m3]} z~drugiego piętra \\
+\rowcolor{Gray} ten wątek jest jak & \textbf{smok} \texttt{[subst:sg:nom:m3]} z~głowami , które odrastają\\
     \end{tabular}
 }
 \end{frame}
@@ -1044,27 +1060,251 @@ przechodził ten & \textbf{bokser} \texttt{[subst:sg:acc:m3]} z drugiego piętra
     \setlength{\tabcolsep}{2pt}
     \begin{tabular}{rl}
 \rowcolor{Gray} te & \textbf{grzyby} \texttt{[subst:pl:nom:m3]} też nie są osolone\\
-kieliszek do ust i poi go & \textbf{szampanem} \texttt{[subst:sg:inst:m3]} . To dlatego nigdy\\
-\rowcolor{Gray} wyrwano Panu & \textbf{zęba} \texttt{[subst:sg:gen:m3]}, że o operacji nie\\
-nie wyjmując & \textbf{papierosa} \texttt{[subst:sg:gen:m3]} z ust\\
+kieliszek do ust i~poi go & \textbf{szampanem} \texttt{[subst:sg:inst:m3]} . To dlatego nigdy\\
+\rowcolor{Gray} wyrwano Panu & \textbf{zęba} \texttt{[subst:sg:gen:m3]}, że o~operacji nie\\
+nie wyjmując & \textbf{papierosa} \texttt{[subst:sg:gen:m3]} z~ust\\
 \rowcolor{Gray} rosyjskich & \textbf{śmigłowców} \texttt{[subst:pl:gen:m2]} doczekało się reakcji\\
-crepes, & \textbf{naleśniki} \texttt{[subst:pl:nom:m2]} , z nadzwyczajną mieszaniną\\
+crepes, & \textbf{naleśniki} \texttt{[subst:pl:nom:m2]} , z~nadzwyczajną mieszaniną\\
 \rowcolor{Gray} o~niebieskich & \textbf{migdałach} \texttt{[subst:pl:loc:m2]}\\
 dekorowania jej plasterkami & \textbf{ogórka} \texttt{[subst:sg:acc:m2]} i~jajka\\
-\rowcolor{Gray} założył mu błyskawicznie & "\textbf{nelsona}" \texttt{[subst:sg:gen:m3]} i zanim\\
+\rowcolor{Gray} założył mu błyskawicznie & "\textbf{nelsona}" \texttt{[subst:sg:gen:m3]} i~zanim\\
     \end{tabular}
 }
 \end{frame}
 
-\begin{frame}[allowframebreaks]
-  \frametitle{Segmenty nierozpoznane}
-
-Rzeczowniki w~NKJP1M:
-  \begin{columns}
-
-  \end{columns}
+\begin{frame}[fragile,allowframebreaks]
+  \frametitle{Pułapka kwalifikatorów}
+{\small
+\begin{verbatim}
+$ morfeusz_analyzer 
+Morfeusz analyzer, version: 1.9.2
+Setting dictionary search path to: .
+Using dictionary: sgjp (default)
+zamkiem
+[0,1,zamkiem,zamek:s1,subst:sg:inst:m3,pospolita,_
+ 0,1,zamkiem,zamek:s2,subst:sg:inst:m3,pospolita,_]
+terminalami
+[0,1,terminalami,terminal:s1,subst:pl:inst:m3,pospolita,_
+ 0,1,terminalami,terminal:s2,subst:pl:inst:m3,pospolita,_]
+\end{verbatim}
 
 \framebreak
+
+\begin{verbatim}
+$ morfeusz_analyzer 
+Morfeusz analyzer, version: 1.9.2
+Setting dictionary search path to: .
+Using dictionary: sgjp (default)
+waluta
+[0,1,waluta,waluta:s1,subst:sg:nom:f,pospolita,ekon.
+ 0,1,waluta,waluta:s2,subst:sg:nom:f,pospolita,pot.]
+cykoria
+[0,1,cykoria,cykoria:s1,subst:sg:nom:f,pospolita,bot.
+ 0,1,cykoria,cykoria:s2,subst:sg:nom:f,pospolita,pot.]
+karma
+[0,1,karma,karma:s1,subst:sg:nom:f,pospolita,_
+ 0,1,karma,karma:s2,subst:sg:nom:f,pospolita,rel.]
+Czechowi
+[0,1,Czechowi,Czech:s2,subst:sg:dat:m1,nazwisko,_
+ 0,1,Czechowi,Czech:s1,subst:sg:dat:m1,pospolita,_]
+
+\end{verbatim}
+}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+   \frametitle{Segmenty nierozpoznane}
+ \scriptsize
+ %Rzeczowniki w~NKJP1M:
+   \begin{columns}
+ \begin{column}{.15\textwidth}
+ ;(\\
+ ;)\\
+ ;]\\
+ ;*\\
+ (\\
+ §\\
+ \$\\
+ \%\\
+ +\\
+ 1.000\\
+ 1.1\\
+ 1.2\\
+ 2000+\\
+ 3.c\\
+ 4.a.\\
+ 4.b\\
+ 58/fin/50\\
+ 60.22.11–00.00\\
+% 60546.fizjks@iftia.univ.gda.pl
+ 6667/88/IV\\
+% 9b16v3\$pmh\$1@news.onet.pl\\
+ A.C\\
+ AC+79\\
+A.D.D.A.M\\
+ A/H1N1\\
+ \end{column}
+
+
+ \begin{column}{.2\textwidth}
+ A.K.M\\
+ all'amatricane\\
+ Aujourd'hui\\
+ Avallac'h\\
+ B.\\
+ B)\\
+ Barr`es\\
+ bart@1under.com\\
+ bburski@friko6.onet.pl\\
+ beat@polbox.com\\
+ biglamer@net.pl\\
+ Borax@polbox.com
+ B+R\\
+ bralczyk@gazeta.pl\\
+ (C)Maciek\\
+ ;d\\
+ D.\\
+ d'affaires\\
+ d'arancio\\
+ d'Arc\\
+ d'Arma\\
+ d'orchestre\\
+ d'Orsay
+ \end{column}
+ \begin{column}{.2\textwidth}
+ d'une\\
+ D'Viosion\\
+ e\"S\"man\\
+ ...ewski\\
+ forum.miau.pl\\
+ gazeta.pl\\
+ Gekij\_o\\
+ goury@o2.pl\\
+ greka@hydepark.pl\\
+ guhru@bbs.chip.pl\\
+ II.16\\
+ IV.5\\
+ izaa83@interia.pl\\
+ Ja'rai\\
+ Kaznodziey'a\\
+ KoniecPZPN.pl\\
+ Ku–ku–ku–ku\\
+ l'Alsacienne\\
+ L'Authentique\\
+ lebron26@vp.pl\\
+ Lem\_ur\\
+ LI\_I\_I\\
+ lile@vp.pl\\
+\end{column}
+\begin{column}{.2\textwidth}
+ marcinj@webcorp.pl\\
+ marcoos\_87@wp.pl\\
+ Matiki's\\
+ Mawsu'at\\
+ Miau.pl\\
+% mniedziela@prezydent.pl\\
+% Mozgolencia@interia.pl\\
+ mrcheat@gazeta.pl\\
+ m/s\\
+ Na+\\
+ ona\_\_\_@op.pl\\
+ OneStat.com\\
+ Onet.eu\\
+ Onet.pl\\
+ O\_o\\
+% \end{column}
+% \begin{column}
+ OPZZ/p/630/2000\\
+ ;p\\
+ ;P\\
+ ;P)\\
+% paollo@free.poltronic.net
+ P.E.N.\\
+ ping–ponga\\
+ .pl\\
+ pl.hum.teatr\\
+ pl.sci.filozofia\\
+ pl.soc.cośtam\\
+% pl.soc.religia\\
+% P!nk\\
+% portalpomorza.pl\\
+% Portalpomorza.pl
+% posrednictwo@pro.onet.pl
+% Potter's
+% Przycisk2_1
+% Quake'a
+% rad_rez@poczta.onet.pl
+\end{column}
+% \begin{column}
+% redakcja@glospasleka.pl
+% redakcja.pl
+% Redakcja.pl
+% Red's
+% R.E.M.
+% R’N’B
+% rock'n'roll
+% rock’n’roll
+% Rojek–Decor
+% R.P.
+% s...
+% S.A
+% S.A.
+% Saint–Sulpice
+% sbajdas@interia.pl
+% Sep–Sin
+% SETI@Home\\
+% show–biznes
+% slawek.sa@gazeta.pl
+% slowniki.onet.pl
+% \end{column}
+% \begin{column}
+% Solidarność.pl
+% sonka_86@wp.pl
+% Sotheby's
+% Sportingbet.com
+% SS'man
+% store.britannica.com
+% Strona\|Format\\
+% synapse@friko2.onet.pl
+% szybko.pl\\
+% techandtradelaw.blogspot.com
+% T.Love
+% trader.pl
+% Traveller's
+% t–shirt
+% U.S.
+% vojtus@poczta.onet.pl
+% White's
+% windykacja.pl\\
+% Woman's
+% Writers'
+% \end{column}
+% \begin{column}
+% wrzuta.pl
+% www.archiwalia.gov.pl
+% www.blogspot.com
+% www.colours.cz
+% www.englishinbritain.com
+% www.eures.praca.gov.pl
+% www.europetnet.com
+% www.felispolonia.pl
+% www.freshdevices.com
+% www.gadki.lublin.pl/east/z/index.html
+% www.gorock.stalowka.net
+% www.hydepark.pl
+% www.identyfikacja.pl
+% www.kfn.strona.pl
+% www.manggha.krakow.pl
+% www.mbnet.com.pl
+% www.motywsmierci.glt.pl
+% www.mp.pl/szkolenia
+% www.msz.gov.pl
+% www.polskieradioeuro.pl
+% \end{column}
+  \end{columns}
+
+ \framebreak
 
 Ok. 25\% błędów tagerów bez zgadywaczy stanowią słowa
 nierozpoznane. Wśród nich zarysowują się cztery wyraźne grupy:
@@ -1076,10 +1316,11 @@ nierozpoznane. Wśród nich zarysowują się cztery wyraźne grupy:
 \item skróty.
 \end{itemize}
 
+\bigskip
 
-Ogółem Morfeusz 2.0 w~NKJP1M nie rozpoznaje:
+Ogółem Morfeusz 2.0 w~NKJP1M nie rozpoznaje: 
 \begin{itemize}
-\item 10 148 rzeczowników,
+\item 10 148 rzeczowników, 
 \item 460 przymiotników (nie licząc zapisów liczbowych),
 \item 90 czasowników,
 %\item 82 skrótów,
@@ -1216,7 +1457,7 @@ poprawne dopasowanie jest w~dopełniaczu.
 \end{frame}
 
 
-\section{Dyskusja i rekomendacje}
+\section{Dyskusja i~rekomendacje}
 \frame{\sectionpage}
 
 \begin{frame}
@@ -1272,15 +1513,15 @@ poprawne dopasowanie jest w~dopełniaczu.
 
   Chciałbym tager, który:
    \begin{itemize}
-    \item<1-> daje się (względnie?) łatwo zainstalować i uruchomić na wszystkich platformach, na których jest Morfeusz,\\
+    \item<1-> daje się (względnie?) łatwo zainstalować i~uruchomić na wszystkich platformach, na których jest Morfeusz,\\
     \alert{obecnie: żaden; trzeba przygotować dystrybucję binarną Macy pod Windows; Haskell Platform + Concraft lub kompilacja innych tagerów,}
-    \item<2-> da się rozszerzyć o uwzględnianie informacji o czasie powstania tekstu,\\
+    \item<2-> da się rozszerzyć o~uwzględnianie informacji o~czasie powstania tekstu,\\
     \alert{obecnie: żaden, możliwe: w opartych na ML jako dodatkowa cecha.}
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Podziękowania}
-  \structure{Podziękowania za sugestie i uwagi dla:}
+  \structure{Podziękowania za sugestie i~uwagi dla:}
   \begin{itemize}
     \item Adama Radziszewskiego
     \item Jakuba Waszczuka
@@ -1326,6 +1567,8 @@ poprawne dopasowanie jest w~dopełniaczu.
     TnT* & Hidden markov model & Brants (2000) & 96.46 \\ \hline
 \end{tabular}
 \end{frame}
+
+
 
 \begin{frame}[allowframebreaks]
   \frametitle{Bibliografia}
@@ -1382,6 +1625,38 @@ Waszczuk, Jakub, 2012.
   {T}he case of morphosyntactic tagging of a highly inflected language.
 \newblock In {\em Proceedings of the 24th International Conference on
   Computational Linguistics ({COLING}\,2012)\/}. Mumbai, India.
+\beamertemplatearticlebibitems
+\bibitem[Petkevič, 2006]{petk:06}
+Petkevič Vladimír, 2006.
+\newblock Reliable {M}orphological {D}isambiguation of {C}zech: {R}ule-{B}ased {A}pproach is {N}ecessary. 
+\newblock In {\em Insight into the Slovak and Czech Corpus Linguistics}, Bratislava.
+
+\beamertemplatearticlebibitems
+\bibitem[Petkevič, 2014]{petk:14}
+Petkevič, Vladimír, 2014. 
+\newblock {P}roblémy automatické morfologické disambiguace češtiny. 
+\newblock Naše řeč  97, 4–5, s. 194–207.
+
+\beamertemplatearticlebibitems
+\bibitem[Jel\'{i}nek, 2008]{jelinek:08}
+Jel\'{i}nek, Tom\'{a}\v{s}, 2008. 
+\newblock {N}ov\'{e} zna\v{c}kov\'{a}n\'{i} v~{\v{C}}esk\'{e}m n\'{a}rodn\'{i}m korpusu. 
+\newblock Naše \v{r}e\v{c}  91, 1, s. 13–20.
+
+
+\beamertemplatearticlebibitems
+\bibitem[Straka, 2014]{morphodita:14}
+Strakov\'{a}, Jana  and  Straka, Milan  and  Haji\v{c}, Jan
+\newblock {Open-{S}ource {T}ools for {M}orphology, {L}emmatization, {POS} {T}agging and {N}amed {E}ntity {R}ecognition}
+\newblock {Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations.}
+
+\beamertemplatearticlebibitems
+\bibitem[Czerepowicka, 2014]{sejf:14}
+Czerepowicka, Monika 2014
+\newblock {{SEJF} -- {S}łownik elektroniczny jednostek frazeologicznych}
+\newblock {{J}ęzyk {P}olski, 2, 116-129.}
+
+
   \end{thebibliography}
 \end{frame}
 
