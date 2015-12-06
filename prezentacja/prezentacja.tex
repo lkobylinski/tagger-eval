@@ -45,7 +45,7 @@
 \newcolumntype{a}{>{\columncolor{Gray}}c}
 
 %
-\title{Tagery morfosyntaktyczne dla języka polskiego}
+\title[Tagery dla języka polskiego]{Tagery morfosyntaktyczne dla języka polskiego}
 %
 \author{Łukasz Kobyliński \and Witold Kieraś}
 %
@@ -257,6 +257,12 @@ gdzie:
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Conditional Random Fields a inne modele grafowe}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{img/pgms.png}
+  \end{center}
+\end{frame}
+
 \begin{frame}{WCRFT i Concraft -- zasada działania}
 \begin{columns}[t]
   \column{0.5\textwidth}
@@ -287,54 +293,8 @@ gdzie:
   \structure{Concraft, WCRFT, WMBT} -- silnie zależą od stosu Corpus2 / Toki / Maca, których kompilacja pod Windows jest możliwa, ale nietrywialna (Visual Studio).
 \end{frame}
 
-\section{Tagery morfosyntaktyczne dla innych języków europejskich}
-\frame{\sectionpage}
-
-\begin{frame}{Tagowanie języka angielskiego}
-  \structure{Penn Treebank Wall Street Journal (WSJ) release 3}
-  \footnotesize
-  \begin{tabular}{cp{3.5cm}p{2.5cm}c}
-    System & Metoda & Publikacja & Dokładność \\ \hline
-    BI-LSTM-CRF & Bidirectional LSTM-CRF Model & Huang et al. (2015) & 97.55 \\ \hline
-    SCCN & Semi-supervised condensed nearest neighbor & Søgaard (2011) & 97.50 \\ \hline
-    Morče/COMPOST & Averaged Perceptron & Spoustová et al. (2009) & 97.44 \\ \hline
-    structReg & CRFs with structure regularization & Sun(2014) & 97.36 \\ \hline
-    LTAG-spinal & Bidirectional perceptron learning & Shen et al. (2007) & 97.33 \\ \hline
-    Stanford Tagger 2.0 & Maximum entropy cyclic dependency network & Manning (2011) & 97.32 \\ \hline
-    Stanford Tagger 2.0 & Maximum entropy cyclic dependency network & Manning (2011) & 97.29 \\ \hline
-    Stanford Tagger 1.0 & Maximum entropy cyclic dependency network & Toutanova et al. (2003) & 97.24 \\ \hline
-  \end{tabular}
-\end{frame}
-
-\begin{frame}{Tagowanie języka angielskiego}
-  \footnotesize
-  \begin{tabular}{cp{3.5cm}p{2.5cm}c}
-    System & Metoda & Publikacja & Dokładność \\ \hline
-    Morče/COMPOST & Averaged Perceptron & Spoustová et al. (2009) & 97.23 \\ \hline
-    LAPOS & Perceptron based training with lookahead & Tsuruoka, Miyao, and Kazama (2011) & 97.22 \\ \hline
-    SVMTool & SVM-based tagger and tagger generator & Giménez and Márquez (2004) & 97.16 \\ \hline
-    Maxent easiest-first & Maximum entropy bidirectional easiest-first inference & Tsuruoka and Tsujii (2005) & 97.15 \\ \hline
-    Averaged Perceptron & Averaged Perception discriminative sequence model & Collins (2002) & 97.11 \\ \hline
-    GENiA Tagger** & Maximum entropy cyclic dependency network & Tsuruoka, et al (2005) & 97.05 \\ \hline
-    MElt & MEMM with external lexical information & Denis and Sagot (2009) & 96.96 \\ \hline
-    TnT* & Hidden markov model & Brants (2000) & 96.46 \\ \hline
-\end{tabular}
-\end{frame}
-
-\begin{frame}{Tagery języków europejskich -- porównanie}
-  \begin{center}
-  \begin{tabular}{l|l|r|r|r}
-    Tager       & Język     & Rozmiar & Korpus  & Dokładność \\
-                &           & tagsetu & treningowy & \\ \hline
-    Concraft    & polski    & 4 000 / 1 000 & 1M    & 91,07\% \\
-    Obeliks     & słoweński & 1 903 & 500k  & 91,34\% \\
-    Morče       & czeski    & 3 922 / 1 571 & 2M    & 95,67\% \\
-    Featurama   & czeski    & 3 922 / 1 571 & 2M    & 95,66\% \\
-    Morphodita  & czeski    & 3 922 / 1 571 & 2M    & 95,75\% \\
-    BI-LSTM-CRF & angielski & 36+12   & 1M   & 97,55\% \\
-  \end{tabular}
-  \end{center}
-\end{frame}
+%\section{Tagery morfosyntaktyczne dla innych języków europejskich}
+%\frame{\sectionpage}
 
 \section{Tagery języka polskiego -- analiza ilościowa}
 \frame{\sectionpage}
@@ -365,6 +325,21 @@ n & Tager 		& $Acc_{lower}$	& $Acc^K_{lower}$	& $Acc^U_{lower}$	\\ \hline
 \item $Acc^K_{lower}$ -- dokładność dla znanych słów,
 \item $Acc^U_{lower}$ -- dokładność dla słów nieznanych (2,8\% Morfeusz1, 1,6\% Morfeusz2).
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Tagery języków europejskich -- porównanie}
+  \begin{center}
+  \begin{tabular}{l|l|r|r|r}
+    Tager       & Język     & Rozmiar & Korpus  & Dokładność \\
+                &           & tagsetu & treningowy & \\ \hline
+    Concraft    & polski    & 4 000 / 1 000 & 1M    & 91,07\% \\
+    Obeliks     & słoweński & 1 903 & 500k  & 91,34\% \\
+    Morče       & czeski    & 3 922 / 1 571 & 2M    & 95,67\% \\
+    Featurama   & czeski    & 3 922 / 1 571 & 2M    & 95,66\% \\
+    Morphodita  & czeski    & 3 922 / 1 571 & 2M    & 95,75\% \\
+    BI-LSTM-CRF & angielski & 36+12   & 1M   & 97,55\% \\
+  \end{tabular}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Analiza rezultatu działania tagerów}
@@ -1318,6 +1293,37 @@ poprawne dopasowanie jest w~dopełniaczu.
     \usebeamerfont{section title}Dziękujemy za uwagę!\par
     \end{beamercolorbox}
     \end{centering}
+\end{frame}
+
+\begin{frame}{Tagowanie języka angielskiego}
+  \structure{Penn Treebank Wall Street Journal (WSJ) release 3}
+  \footnotesize
+  \begin{tabular}{cp{3.5cm}p{2.5cm}c}
+    System & Metoda & Publikacja & Dokładność \\ \hline
+    BI-LSTM-CRF & Bidirectional LSTM-CRF Model & Huang et al. (2015) & 97.55 \\ \hline
+    SCCN & Semi-supervised condensed nearest neighbor & Søgaard (2011) & 97.50 \\ \hline
+    Morče/COMPOST & Averaged Perceptron & Spoustová et al. (2009) & 97.44 \\ \hline
+    structReg & CRFs with structure regularization & Sun(2014) & 97.36 \\ \hline
+    LTAG-spinal & Bidirectional perceptron learning & Shen et al. (2007) & 97.33 \\ \hline
+    Stanford Tagger 2.0 & Maximum entropy cyclic dependency network & Manning (2011) & 97.32 \\ \hline
+    Stanford Tagger 2.0 & Maximum entropy cyclic dependency network & Manning (2011) & 97.29 \\ \hline
+    Stanford Tagger 1.0 & Maximum entropy cyclic dependency network & Toutanova et al. (2003) & 97.24 \\ \hline
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Tagowanie języka angielskiego}
+  \footnotesize
+  \begin{tabular}{cp{3.5cm}p{2.5cm}c}
+    System & Metoda & Publikacja & Dokładność \\ \hline
+    Morče/COMPOST & Averaged Perceptron & Spoustová et al. (2009) & 97.23 \\ \hline
+    LAPOS & Perceptron based training with lookahead & Tsuruoka, Miyao, and Kazama (2011) & 97.22 \\ \hline
+    SVMTool & SVM-based tagger and tagger generator & Giménez and Márquez (2004) & 97.16 \\ \hline
+    Maxent easiest-first & Maximum entropy bidirectional easiest-first inference & Tsuruoka and Tsujii (2005) & 97.15 \\ \hline
+    Averaged Perceptron & Averaged Perception discriminative sequence model & Collins (2002) & 97.11 \\ \hline
+    GENiA Tagger** & Maximum entropy cyclic dependency network & Tsuruoka, et al (2005) & 97.05 \\ \hline
+    MElt & MEMM with external lexical information & Denis and Sagot (2009) & 96.96 \\ \hline
+    TnT* & Hidden markov model & Brants (2000) & 96.46 \\ \hline
+\end{tabular}
 \end{frame}
 
 \begin{frame}[allowframebreaks]
