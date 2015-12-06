@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[xcolor=dvipsnames,polish]{beamer}
 %
 \mode<presentation>
 {
@@ -7,23 +7,43 @@
   \setbeamercovered{transparent}
 }
 \usefonttheme[onlylarge]{structurebold}
-\usepackage[polish]{babel}
-%\usepackage[OT1]{polski}
+%\usepackage[polish]{babel}
+\usepackage{polski}
 \usepackage[utf8]{inputenc}
 %\setbeameroption{show notes}
 %
 %\usepackage{times}
-\usepackage[T1]{fontenc}
-\usepackage{ae}
+%\usepackage[T1]{fontenc}
+%\usepackage{ae}
 \usepackage{tikz}
-\usepackage{ulem}
+%\usepackage{ulem}
 \usepackage{color}
+%\usepackage{iwona}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{xcolor,colortbl}
+\usepackage{verbatim}
+\newcommand{\textapprox}{\raisebox{0.5ex}{\texttildelow}}
+
 %
-\usetikzlibrary{positioning}
-\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,shapes,trees,automata,decorations.pathmorphing,matrix,backgrounds,positioning}
 %
 \newcommand{\marked}[1]{{\bf #1}}
 \newcommand{\markerr}[1]{\textcolor{red}{#1}}
+
+
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+\definecolor{Gray}{gray}{0.90}
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+
 %
 \title{Tagery morfosyntaktyczne dla języka polskiego}
 %
@@ -58,8 +78,8 @@
   \item podsumowanie obecnego stanu narzędzi do tagowania morfosyntaktycznego w języku polskim,
   \item porównanie dokładności i wykorzystywanych algorytmów z narzędziami dla innych języków europejskich,
   \item analiza jakościowa wyników działania poszczególnych tagerów,
-  \item przegląd problemów, które nie zostały zaadresowane przez istniejące tagery,
-  \item stwierdzenie, czy wśród dostępnych narzędzi dostępny jest tager o pożądanych cechach (następny slajd),
+  \item przegląd problemów, które nie zostały rozwiązane przez istniejące tagery,
+  \item stwierdzenie, czy wśród dostępnych narzędzi istnieje tager o pożądanych cechach,% (następny slajd),
   \item rekomendacje dotyczące dalszych kroków.
 \end{itemize}
 \end{frame}
@@ -91,7 +111,7 @@
 lub symboli. Segmenty są ciągłe oraz rozłączne.
   \vspace{0.5cm}
 
-  \structure{Znacznik morfosyntaktycnzy (tag)} -- symbol, który można przypisać segmentowi, określający jego własności morfologiczno-składniowe.
+  \structure{Znacznik morfosyntaktyczny (tag)} -- symbol, który można przypisać segmentowi, określający jego własności morfologiczno-składniowe.
   \vspace{0.5cm}
 
   \structure{Znakowanie morfosyntaktyczne (tagowanie)} -- zadanie przypisania ciągowi segmentów ciągu znaczników morfosyntaktycznych.
@@ -168,7 +188,7 @@ lub symboli. Segmenty są ciągłe oraz rozłączne.
   \end{center}
 \end{frame}
 
-\begin{frame}{Tagery morfostynaktyczne dla języka polskiego}
+\begin{frame}{Tagery morfosyyntaktyczne dla języka polskiego}
 \structure{Tagery ,,archiwalne''}
 \vspace{0.5cm}
 
@@ -181,7 +201,7 @@ $weak\ correctness = 91.30\%$
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Tagery morfostynaktyczne dla języka polskiego}
+\begin{frame}{Tagery morfosyntaktyczne dla języka polskiego}
 \structure{Tagery uwzględniające tagset NKJP}
 \begin{itemize}
 \item Pantera [Acedański 2010] -- adaptacja algorytmu Brilla do języków bogatych morfologicznie, takich jak polski,
@@ -191,7 +211,7 @@ $weak\ correctness = 91.30\%$
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Tagery morfostynaktyczne dla języka polskiego}
+\begin{frame}{Tagery morfosyntaktyczne dla języka polskiego}
 \structure{Modele dla tagerów zaimplementowanych dla innych języków}
 \begin{itemize}
 \item TnT Tagger -- statystyczny tager trigramowy, model dla PL przygotowany przez M. Miłkowskiego,\\
@@ -212,8 +232,10 @@ dokładność ,,ok. 88\%'',\\
 \end{itemize}
 \begin{tabular}{p{8cm}|r|r}
 r & good(r) & bad(r) \\ \hline
-Zmień przypadek przyimka z $acc$ na $loc$, if jeśli kończy się na $na$ i jeden z kolejnych tokenów jest w przypadku $loc$. & 2496 & 113 \\ \hline
-Zmień przypadek przymiotnika z $loc$ na $inst$, jeśli jeden z kolejnych tokenów ma przypadek $inst$ i kończy się na $em$. & 921 & 29 \\ \hline
+Zmień przypadek przyimka z \texttt{acc} na \texttt{loc}, jeśli kończy
+się na \texttt{na} i jeden z kolejnych tokenów jest w przypadku
+\texttt{loc}. & 2496 & 113 \\ \hline
+Zmień przypadek przymiotnika z \texttt{loc} na \texttt{inst}, jeśli jeden z kolejnych tokenów ma przypadek \texttt{inst} i~kończy się na \texttt{em}. & 921 & 29 \\ \hline
 \end{tabular}
 \end{frame}
 
@@ -235,8 +257,23 @@ gdzie:
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Tager CRF -- zasada działania}
-  TODO
+\begin{frame}{WCRFT i Concraft -- zasada działania}
+\begin{columns}[t]
+  \column{0.5\textwidth}
+  \structure{WCRFT}
+  \begin{itemize}
+    \item wieloprzebiegowe ujednoznacznianie niezależnych warstw: klasa gramatyczna, liczba, przypadek, itp.
+    \item modele pierwszego rzędu -- kontekst analizowany na poziomie obserwacji,
+    \item cechy: forma ortograficzna (\emph{orth}), bigramy \emph{orth}, klasa gramatyczna, bigramy, trigramy \emph{orth}, przypadek, rodzaj, liczba, zgodnosć gramatyczna
+  \end{itemize}
+  \column{0.5\textwidth}
+  \structure{Concraft}
+  \begin{itemize}
+    \item wprowadzenie ograniczeń co do możliwości występowania tagów w danym kontekście w algorytm CRF (ograniczony liniowy model CRF),
+    \item ujednoznacznianie w dwóch warstwach wpływających na siebie (część mowy + przypadek + osoba, pozostałe kategorie gramatyczne),
+    \item cechy: forma ortograficzna, dla OOV: prefiks, sufiks, pocz. zdania,
+  \end{itemize}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Przenośność i łatwość wykorzystania}
@@ -254,6 +291,7 @@ gdzie:
 \frame{\sectionpage}
 
 \begin{frame}{Tagowanie języka angielskiego}
+  \structure{Penn Treebank Wall Street Journal (WSJ) release 3}
   \footnotesize
   \begin{tabular}{cp{3.5cm}p{2.5cm}c}
     System & Metoda & Publikacja & Dokładność \\ \hline
@@ -311,7 +349,7 @@ gdzie:
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Ewaluacja pojedynczych tagerów}
+\begin{frame}{Ewaluacja tagerów}
 \structure{Eksperymenty na milionowym podkorpusie Narodowego Korpusu Języka Polskiego, ver. 1.1, 10-krotna walidacja krzyżowa.}
 \begin{center}
 \begin{tabular}{lcccc} \hline
@@ -325,7 +363,7 @@ n & Tager 		& $Acc_{lower}$	& $Acc^K_{lower}$	& $Acc^U_{lower}$	\\ \hline
 \begin{itemize}
 \item $Acc_{lower}$ -- łączna dokładność,
 \item $Acc^K_{lower}$ -- dokładność dla znanych słów,
-\item $Acc^U_{lower}$ -- dokładność dla słów nieznanych.
+\item $Acc^U_{lower}$ -- dokładność dla słów nieznanych (2,8\% Morfeusz1, 1,6\% Morfeusz2).
 \end{itemize}
 \end{frame}
 
@@ -372,63 +410,76 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
 \end{center}
 \end{frame}
 
+\begin{frame}{Podział na klasy gramatyczne}
+  \structure{Concraft: błąd wyboru klasy vs błąd w ramach klasy (test: 100k)}
+  \begin{center}
+    \includegraphics[width=\textwidth]{img/ctag_errs.png}
+  \end{center}
+\end{frame}
+
 \begin{frame}{Najczęstsze błędy}
   \structure{Concraft: najczęstsze błędy wyboru klasy gramatycznej}
+  \begin{center}
   \begin{tabular}{llrr}
-    Concraft & NKJP & liczność & wystąpienia (\%) \\
-    adj & subst & 199 & 0.1654 \\
-    conj & qub & 178 & 0.1479 \\
-    subst & adj & 162 & 0.1346 \\
-    adv & qub & 159 & 0.1321 \\
-    subst & ger & 152 & 0.1263 \\
-    qub & conj & 151 & 0.1255 \\
-    subst & brev & 140 & 0.1164 \\
-    ger & subst & 128 & 0.1064 \\
-    num & adj & 108 & 0.0898 \\
-    ppas & adj & 108 & 0.0898 \\
-    qub & adv & 91 & 0.0756 \\
-    adj & ppas & 71 & 0.0590 \\
-    adj & num & 71 & 0.0590 \\
+    Concraft & NKJP & liczność & \% błędów \\ \hline
+    adj & subst & 199 & 1.9422 \\
+    conj & qub & 178 & 1.7373 \\
+    subst & adj & 162 & 1.5811 \\
+    adv & qub & 159 & 1.5518 \\
+    subst & ger & 152 & 1.4835 \\
+    qub & conj & 151 & 1.4737 \\
+    subst & brev & 140 & 1.3664 \\
+    ger & subst & 128 & 1.2493 \\
+    num & adj & 108 & 1.0541 \\
+    ppas & adj & 108 & 1.0541 \\
+    qub & adv & 91 & 0.8882 \\
+    adj & ppas & 71 & 0.6930 \\
+    adj & num & 71 & 0.6930 \\
   \end{tabular}
+\end{center}
 \end{frame}
 
 \begin{frame}{Najczęstsze błędy}
-  \structure{Concraft: najczęstsze błędy doboru tagu w ramach klasy $subst$}
+  \structure{Concraft: najczęstsze błędy doboru tagu w ramach klasy \texttt{subst}}
+  \begin{center}
   \begin{tabular}{llrr}
-    Concraft & NKJP & liczność & wystąpienia (\%) \\
-    sg:nom:m3 & sg:acc:m3 & 191 & 0.1587 \\
-    sg:acc:m3 & sg:nom:m3 & 153 & 0.1272 \\
-    sg:acc:n & sg:nom:n & 134 & 0.1114 \\
-    sg:nom:n & sg:acc:n & 117 & 0.0972 \\
-    pl:nom:m3 & pl:acc:m3 & 89 & 0.0740 \\
-    pl:acc:f & pl:nom:f & 78 & 0.0648 \\
-    pl:nom:f & pl:acc:f & 71 & 0.0590 \\
-    pl:acc:m3 & pl:nom:m3 & 68 & 0.0565 \\
-    sg:gen:m1 & sg:acc:m1 & 67 & 0.0557 \\
-    sg:acc:m1 & sg:gen:m1 & 53 & 0.0440 \\
-    pl:nom:n & pl:acc:n & 48 & 0.0399 \\
-    sg:gen:f & pl:gen:f & 47 & 0.0391 \\
+    Concraft & NKJP & liczność & \% błędów \\ \hline
+    sg:nom:m3 & sg:acc:m3 & 191 & 1.8641 \\
+    sg:acc:m3 & sg:nom:m3 & 153 & 1.4933 \\
+    sg:acc:n & sg:nom:n & 134 & 1.3078 \\
+    sg:nom:n & sg:acc:n & 117 & 1.1419 \\
+    pl:nom:m3 & pl:acc:m3 & 89 & 0.8686 \\
+    pl:acc:f & pl:nom:f & 78 & 0.7613 \\
+    pl:nom:f & pl:acc:f & 71 & 0.6930 \\
+    pl:acc:m3 & pl:nom:m3 & 68 & 0.6637 \\
+    sg:gen:m1 & sg:acc:m1 & 67 & 0.6539 \\
+    sg:acc:m1 & sg:gen:m1 & 53 & 0.5173 \\
+    pl:nom:n & pl:acc:n & 48 & 0.4685 \\
+    sg:gen:f & pl:gen:f & 47 & 0.4587 \\
   \end{tabular}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Najczęstsze błędy}
-  \structure{Concraft: najczęstsze błędy doboru tagu w ramach klasy $adj$}
+  \structure{Concraft: najczęstsze błędy doboru tagu w ramach klasy \texttt{adj}}
+  \begin{center}
   \begin{tabular}{llrr}
-    Concraft & NKJP & liczność & wystąpienia (\%) \\
-    sg:nom:m3:pos & sg:acc:m3:pos & 90 & 0.0748 \\
-    sg:acc:m3:pos & sg:nom:m3:pos & 72 & 0.0598 \\
-    sg:nom:m1:pos & sg:nom:m3:pos & 57 & 0.0474 \\
-    sg:nom:n:pos & sg:acc:n:pos & 51 & 0.0424 \\
-    pl:nom:m3:pos & pl:acc:m3:pos & 49 & 0.0407 \\
-    pl:nom:f:pos & pl:acc:f:pos & 46 & 0.0382 \\
-    pl:acc:f:pos & pl:nom:f:pos & 44 & 0.0366 \\
-    sg:nom:m3:pos & sg:nom:m1:pos & 42 & 0.0349 \\
-    sg:acc:n:pos & sg:nom:n:pos & 32 & 0.0266 \\
-    pl:acc:m3:pos & pl:nom:m3:pos & 28 & 0.0233 \\
-    pl:nom:n:pos & pl:acc:n:pos & 27 & 0.0224 \\
-    pl:nom:m3:pos & pl:nom:f:pos & 25 & 0.0208 \\
-    pl:acc:n:pos & pl:nom:n:pos & 21 & 0.0175 \\
-\end{tabular}
+    Concraft & NKJP & liczność & \% błędów \\ \hline
+    sg:nom:m3:pos & sg:acc:m3:pos & 90 & 0.8784 \\
+    sg:acc:m3:pos & sg:nom:m3:pos & 72 & 0.7027 \\
+    sg:nom:m1:pos & sg:nom:m3:pos & 57 & 0.5563 \\
+    sg:nom:n:pos & sg:acc:n:pos & 51 & 0.4978 \\
+    pl:nom:m3:pos & pl:acc:m3:pos & 49 & 0.4782 \\
+    pl:nom:f:pos & pl:acc:f:pos & 46 & 0.4490 \\
+    pl:acc:f:pos & pl:nom:f:pos & 44 & 0.4294 \\
+    sg:nom:m3:pos & sg:nom:m1:pos & 42 & 0.4099 \\
+    sg:acc:n:pos & sg:nom:n:pos & 32 & 0.3123 \\
+    pl:acc:m3:pos & pl:nom:m3:pos & 28 & 0.2733 \\
+    pl:nom:n:pos & pl:acc:n:pos & 27 & 0.2635 \\
+    pl:nom:m3:pos & pl:nom:f:pos & 25 & 0.2440 \\
+    pl:acc:n:pos & pl:nom:n:pos & 21 & 0.2050 \\
+  \end{tabular}
+  \end{center}
 \end{frame}
 
 \begin{frame}{Rozmiar danych treningowych}
@@ -611,7 +662,7 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
         kogoś & 82 \\
         czymś & 63 \\
         kimś & 42 \\
-        gdybym & 40 \\
+%        gdybym & 40 \\
         udziałem & 40 \\
         %żebym & 39 \\
         %żebyś & 34 \\
@@ -622,26 +673,27 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
       \footnotesize
       \begin{tabular}{l|r}
         komuś & 31 \\
-        gdybyśmy & 19 \\
+%        gdybyśmy & 19 \\
         tom & 19 \\
         %żebyśmy & 12 \\
-        gdybyś & 7 \\
+ %       gdybyś & 7 \\
         działam & 6 \\
         jam & 5 \\
         doń & 5 \\
         oścież & 5 \\
-        gdybyście & 4 \\
+ %       gdybyście & 4 \\
         tyłem & 4 \\
         musiałem & 3 \\
         podziałem & 3 \\
         piekłem & 3 \\
+       czekałem & 3 \\
       \end{tabular}
     \end{center}
     \column{.3\textwidth}
     \begin{center}
       \footnotesize
       \begin{tabular}{l|r}
-        czekałem & 3 \\
+
         jadłem & 3 \\
         rozdziałem & 2 \\
         wyłom & 2 \\
@@ -659,7 +711,7 @@ num & 16160 & 33,40 & 56,40 & 60,32 & 55,99 \\
 \end{frame}
 
 \begin{frame}{Problem niejednoznaczności segmentacji}
-  \structure{Możliwe rozwiązania: tagset pośredni (A. Radziszewski)}
+  \structure{Możliwe rozwiązania: tagset pośredni (A. Radziszewski).}
   Wprowadźmy tagset pośredni, który pozwoli uniknąć części niejednoznaczności
   \begin{center}
   \begin{tikzpicture}[auto,xscale=3,place/.style={circle,draw=blue!50,fill=blue!20,thick,
@@ -684,7 +736,7 @@ inner sep=0pt,minimum size=4mm}]
 
 \begin{frame}{Problem niejednoznaczności segmentacji}
   \structure{Możliwe rozwiązania: tagset pośredni}\\
-  Rozwiązanie analogiczne do trypu $-p\ composite$ w Morfeuszu 2:
+  Rozwiązanie analogiczne do trybu \texttt{-p composite} w Morfeuszu 2:
   \vspace{0.5cm}
 
   \$ echo piekłem | morfeusz\_analyzer\\
@@ -716,8 +768,9 @@ inner sep=0pt,minimum size=4mm}]
   \vspace{0.25cm}
 
   Implementacja w Concraft:\\
-  $\$ \textasciitilde/.cabal/bin/concraft-pl\ tag\ -m\ model.gz\ <\ test.plain$
-  \begin{columns}[t]
+  \texttt{\$ \textapprox/.cabal/bin/concraft-pl\ tag\ -m\ model.gz\ <\ test.plain}
+
+\begin{columns}[t]
     \column{0.5\textwidth}
   \scriptsize
   rzucała space\\
@@ -740,19 +793,60 @@ inner sep=0pt,minimum size=4mm}]
   podłogę space\\
   \hspace{1cm}podłoga subst:sg:acc:f  1.000\\
 \end{columns}
-\end{frame}
 
-\begin{frame}{Problem lematyzacji}
 \end{frame}
 
 \section{Tagery języka polskiego -- analiza jakościowa}
 \frame{\sectionpage}
 
-\begin{frame}{TODO}
+%\begin{frame}{TODO}
+%\end{frame}
+
+\begin{frame}
+  \frametitle{Tagowanie w~NKJP}
+W~NKJP300 zapytanie:
+\begin{itemize}\small
+
+\item<2-> \texttt{[pos=prep \& base!=temu][case=voc]}:
+  5879 wyników.
+
+\medskip
+
+\item<3-> \texttt{[pos=prep][pos="praet|fin|inf|impt"]}: 88
+271 wyników.
+
+\medskip
+
+\item<4-> \texttt{[pos=prep \& base!=temu \& case=\$1][pos=adj \&
+    base!=który \& case!=\$1][pos=subst \& case=\$1]}: 798 794 wyników.
+
+\medskip
+
+\item<5-> \texttt{[pos=prep \& base!=temu \& case=\$1][pos=subst \&
+    case!=\$1]}: 5 770 963 wyników.
+\end{itemize}
 \end{frame}
 
-\section{Dyskusja i rekomendacje}
-\frame{\sectionpage}
+\begin{frame}
+  \frametitle{Podstawa analizy}
+
+Tagery Pantera, Concraft, WCRF i~WMBT (w~dwu wersjach)  trenowane na 90\% NKJP1M. \\
+
+\medskip
+
+Analiza została przeprowadzona na pozostałych 10\%  NKJP1M (ok. 120
+tys. segmentów) oznakowanych
+czterema tagerami w~zestawieniu z~ręcznym znakowaniem wzorcowym.
+
+%\medskip
+
+% Ponadto oznakowaliśmy również:
+% \begin{itemize}
+% \item jedną książkę reportażową z~2015 r. w~całości,
+% \item próbkę tekstów ekonomicznych.
+% \end{itemize}
+
+\end{frame}
 
 \begin{frame}[fragile]{Różne tagsety dla języka polskiego?}
   \structure{Obecnie funkcjonują równolegle dwa tagsety języka polskiego}
@@ -791,22 +885,408 @@ inner sep=0pt,minimum size=4mm}]
     \end{columns}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Dwa tagsety, dwa opisy}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Różnice słownikowe}
+
+\begin{itemize}
+\item Brak interpretacji \texttt{adv} dla: \textsc{jeszcze}, \textsc{znów},
+\textsc{znowu}, \textsc{już}, \textsc{wreszcie}.
+
+\medskip
+
+\item Brak interpretacji \texttt{conj} dla: \textsc{dość}, \textsc{jeszcze}, \textsc{również}, \textsc{także}, \textsc{też}.
+
+\medskip
+
+\item Brak interpretacji \texttt{qub} dla: \textsc{absolutnie}, \textsc{generalnie}, \textsc{głównie},
+\textsc{jak}, \textsc{jakoś}, \textsc{praktycznie}, \textsc{prawdopodobnie}, \textsc{przypuszczalnie},
+\textsc{rzeczywiście}, \textsc{rzekomo}, \textsc{szczególnie}, \textsc{właściwie}, \textsc{wyłącznie}.
+
+\medskip
+
+\item Brak interpretacji \texttt{prep} dla: \textsc{blisko},
+\textsc{bliżej}, \textsc{najbliżej}, \textsc{wyjąwszy},
+\textsc{apropos}, \textsc{celem}, \textsc{x}…
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Inne różnice}
+
+  \begin{itemize}
+  \item Formy
+    \emph{bliska} i~\emph{swojemu} w~wyrażeniach \emph{z~bliska}
+    i~\emph{po swojemu} w~NKJP są \texttt{adjp}, w~Morfeuszu zaś --- \texttt{adj}.
+  \item \textsc{Półtora} w~NKJP to wyłącznie \texttt{subst},
+    w~Morfeuszu --- wyłącznie \texttt{num}.
+  \item Liczebniki \textsc{pół} i~\textsc{ćwierć} w~NKJP wymają liczby
+    mnogiej, w~Morfeuszu 2.0 --- pojedynczej.
+  \item \texttt{Burk} w~NKJP nie odpowiadają tym w~Morfeuszu,
+    np. \emph{łupnia}, \emph{zamian}, \emph{przemian}, \emph{ciemku},
+    \emph{jaw} są tylko formami rzeczowników. Z~drugiej strony
+    \emph{Burkina} i~\emph{Faso} w~NKJP to rzeczowniki, w~Morfeuszu
+    --- burkinostki, \emph{propos} w~NKJP to kublik lub przyimek,
+    w~Morfeuszu --- burkinostka, itd.
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Najczęściej mylone znaczniki}
+\begin{itemize}\small
+\item\alert<2>{\texttt{subst:sg:acc:m3} vs. \texttt{subst:sg:nom:m3}}
+\item \texttt{conj} vs. \texttt{qub}
+\item \alert<2>{\texttt{subst:sg:acc:n} vs. \texttt{subst:sg:nom:n}}
+\item \alert<4>{\texttt{adj:sg:acc:m3:pos} vs. \texttt{adj:sg:nom:m3:pos}}
+\item \alert<2>{\texttt{subst:pl:acc:m3} vs. \texttt{subst:pl:nom:m3}}
+\item \alert<2>{\texttt{subst:pl:acc:f} vs. \texttt{subst:pl:nom:f}}
+\item \texttt{adv} vs. \texttt{qub}
+\item \alert<3>{\texttt{praet:sg:m1:perf} vs. \texttt{praet:sg:m3:perf}}
+\item \alert<3>{\texttt{praet:sg:m1:imperf} vs. \texttt{praet:sg:m3:imperf}}
+\item \alert<2>{\texttt{subst:sg:acc:m1} vs. \texttt{subst:sg:gen:m1}}
+\item \alert<2>{\texttt{subst:pl:nom:f} vs. \texttt{subst:sg:gen:f}}
+\item \alert<4>{\texttt{adj:sg:nom:m1:pos} vs. \texttt{adj:sg:nom:m3:pos}}
+\item  \texttt{prep:acc} vs. \texttt{prep:loc}
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Homonimia}\scriptsize
+
+\Wider[-1em]{
+    \setlength{\tabcolsep}{2pt}
+    \begin{tabular}{rl}
+\rowcolor{Gray}      przekładała & \alert<2->{\textbf{paczki}} \texttt{[paczek:subst:pl:acc:m3]}
+       z ręki do ręki\\ %przest. gwar.
+      W~Krakowie, w~& \textbf{krypcie}
+      \texttt{[krypeć:subst:pl:acc:m3]} pod kościołem księży
+      pijarów\\ %brak kwal.
+\rowcolor{Gray}      pokrywa śnieżna sięga pół & \textbf{metra}
+      \texttt{[metro:subst:sg:gen:n]} . \\ % brak kwal.
+      start na 200 & \alert<2->{\textbf{metrów}} \texttt{[metr:subst:pl:acc:m1]}
+      stylem klasycznym \\ %przest.
+\rowcolor{Gray}      mundurach z~czerwonymi &
+      \textbf{kitami}\texttt{[kit:subst:pl:inst:m3]} na
+      czakach\\ %brak kwal.
+%      Na & \textbf{karcie} \texttt{[kart:subst:sg:loc:m3]} do
+%      głosowania drukuje się odcisk\\ %brak kwal.
+      częstować się wigilijnymi & \textbf{potrawami}
+      \texttt{[potraw:subst:pl:inst:m3]} .\\ %brak kwal.
+\rowcolor{Gray}      o & \alert<2->{\textbf{systemie}} \texttt{[systema:subst:sg:loc:f]}
+      oświaty\\ %daw.
+      informowaliśmy o & \alert<2->{\textbf{związkach}}
+      \texttt{[związka:subst:pl:loc:f]} zawodowych\\ %daw.
+\rowcolor{Gray}      rozwieszała w~& \alert<2->{\textbf{ogrodzie}}
+      \texttt{[ogroda:subst:sg:loc:f]} bieliznę\\ %daw.
+      dwudziestu pięciu & \alert<2->{\textbf{wierszach}}
+      \texttt{[wiersza:subst:pl:loc:f]} poematu
+      Lukrecjusza\\ %ryb. łow.
+\rowcolor{Gray}      wydatków na budowę i~& \alert<2->{\textbf{remonty}}
+      \texttt{[remonta:subst:sg:gen:f]} kaplic\\%przest.
+      Zdradzisz nam & \alert<2->{\textbf{sekrety}}
+      \texttt{[sekreta:subst:pl:acc:f]} urody\\ %rel.spec.
+\rowcolor{Gray}      zatrzaskuje lodówkę pełną &
+      \textbf{puszek}\texttt{[puszek:subst:sg:acc:m3]}
+      z~filmem\\ %brak kwal.
+      Gonią mnie & \alert<2->{\textbf{potwory}} \texttt{[potwora:subst:sg:gen:f]}
+       \\ %daw.
+\rowcolor{Gray}      zapadnij w~& \alert<2->{\textbf{moczary}} \texttt{[moczara:subst:sg:gen:f]}
+       na lewym brzegu\\ %daw.
+      Na & \textbf{karcie} \texttt{[kart:subst:sg:loc:m3]} do
+      głosowania drukuje się odcisk\\ %brak kwal.
+\rowcolor{Gray}      stoi sobie w~& \alert<2->{\textbf{paletach}}
+      \texttt{[paleto:subst:pl:loc:n]} pod folią \\ %daw.
+      Skryły nas & \alert<2->{\textbf{liście}} \texttt{[liście:subst:sg:acc:n]}
+      i~iluzja niewidzialności\\ %przest.
+\rowcolor{Gray}      w ekipie & \alert<2->{\textbf{gości}} \texttt{[gościa:subst:pl:gen:f]}
+      zapanowała zrozumiała euforia\\ %daw
+
+    \end{tabular}
+}
+\end{frame}
+
+\begin{frame}%[fragile,scale=0.8]\scriptsize
+  \frametitle{Homonimia}
+
+%palet, paleta, paleto
+
+\begin{columns}
+  \begin{column}{.28\textwidth}
+\includegraphics[scale=0.65]{img/palet.png}
+
+  \end{column}
+
+  \begin{column}{.28\textwidth}
+\includegraphics[scale=0.65]{img/paleta.png}
+  \end{column}
+
+  \begin{column}{.28\textwidth}
+\includegraphics[scale=0.65]{img/paleto.png}
+  \end{column}
+\end{columns}
+
+
+\end{frame}
+
+
+\begin{frame}\scriptsize
+  \frametitle{Homonimy męskie}
+
+\Wider[-2em]{
+    \setlength{\tabcolsep}{2pt}
+    \begin{tabular}{rl}
+\rowcolor{Gray} oceny prawidłowości odstrzału & \textbf{kozła} \texttt{[subst:sg:gen:m3]} jest wiek\\
+pasjonuje się nie & \textbf{wężami} \texttt{[subst:pl:inst:m3]}, lecz psami \\
+\rowcolor{Gray} od półtora do pięciu tysięcy & \textbf{bojowników} \texttt{[subst:pl:gen:m2]} czeczeńskich \\
+ocenia się długość życia & \textbf{gwarków} \texttt{[subst:pl:gen:m3]} na piętnaście\\
+\rowcolor{Gray} do pełnienia funkcji & \textbf{kapelanów}
+\texttt{[subst:pl:gen:m2]} wojskowych\\
+z dwójką takich wiesz & \textbf{maluchów} \texttt{[subst:pl:gen:m2]} .\\
+\rowcolor{Gray} pomagała przy doręczaniu & \textbf{klientom} \texttt{[subst:pl:dat:m2]} towarów\\
+koncert folkowo-rockowej Kapeli — & \textbf{górali} \texttt{[subst:pl:gen:m2]} z Żywca\\
+\rowcolor{Gray} Ojciec mojej przyjaciółki był & \textbf{admirałem}
+\texttt{[subst:sg:inst:m2]}, mąż kontradmirałem\\
+przechodził ten & \textbf{bokser} \texttt{[subst:sg:acc:m3]} z drugiego piętra \\
+\rowcolor{Gray} ten wątek jest jak & \textbf{smok} \texttt{[subst:sg:nom:m3]} z głowami , które odrastają\\
+    \end{tabular}
+}
+\end{frame}
+
+
+\begin{frame}\scriptsize
+  \frametitle{Wahliwość rodzajowa}
+
+\Wider[-2em]{
+    \setlength{\tabcolsep}{2pt}
+    \begin{tabular}{rl}
+\rowcolor{Gray} te & \textbf{grzyby} \texttt{[subst:pl:nom:m3]} też nie są osolone\\
+kieliszek do ust i poi go & \textbf{szampanem} \texttt{[subst:sg:inst:m3]} . To dlatego nigdy\\
+\rowcolor{Gray} wyrwano Panu & \textbf{zęba} \texttt{[subst:sg:gen:m3]}, że o operacji nie\\
+nie wyjmując & \textbf{papierosa} \texttt{[subst:sg:gen:m3]} z ust\\
+\rowcolor{Gray} rosyjskich & \textbf{śmigłowców} \texttt{[subst:pl:gen:m2]} doczekało się reakcji\\
+crepes, & \textbf{naleśniki} \texttt{[subst:pl:nom:m2]} , z nadzwyczajną mieszaniną\\
+\rowcolor{Gray} o~niebieskich & \textbf{migdałach} \texttt{[subst:pl:loc:m2]}\\
+dekorowania jej plasterkami & \textbf{ogórka} \texttt{[subst:sg:acc:m2]} i~jajka\\
+\rowcolor{Gray} założył mu błyskawicznie & "\textbf{nelsona}" \texttt{[subst:sg:gen:m3]} i zanim\\
+    \end{tabular}
+}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+  \frametitle{Segmenty nierozpoznane}
+
+Rzeczowniki w~NKJP1M:
+  \begin{columns}
+
+  \end{columns}
+
+\framebreak
+
+Ok. 25\% błędów tagerów bez zgadywaczy stanowią słowa
+nierozpoznane. Wśród nich zarysowują się cztery wyraźne grupy:
+\begin{itemize}
+\item rzeczowniki rodzaju \textsc{m1} --- nazwiska i~imiona męskie,
+\item rzeczowniki rodzajów \textsc{m3}, \textsc{f} i~\textsc{n}
+  --- nazwy własne geogr., nazwy firm, organizacji itp., skrótowce,
+\item przymiotniki i~liczebniki --- zapisy liczbowe,
+\item skróty.
+\end{itemize}
+
+
+Ogółem Morfeusz 2.0 w~NKJP1M nie rozpoznaje:
+\begin{itemize}
+\item 10 148 rzeczowników,
+\item 460 przymiotników (nie licząc zapisów liczbowych),
+\item 90 czasowników,
+%\item 82 skrótów,
+\item 20 liczebników (nie licząc zapisów liczbowych).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+  \frametitle{Jak to się robi w~Czechach?}
+
+\begin{tikzpicture}[node distance=2.8cm, auto]\small
+\tikzset{every loop/.style={min distance=10mm,in=0,out=60,looseness=6}}
+\tikzstyle{block} = [rectangle, draw, thick, fill=gray!20,
+  text centered, rounded corners, minimum height=3.3em, minimum width=4em]
+\tikzstyle{line} = [-stealth', thick, draw]
+\tikzstyle{tekst} = [circle,thick,draw=black!75,fill=white,minimum size=1.3cm]
+
+    \node [tekst] (tekst) {Tekst};
+    \node[align=center] [block,right of=tekst] (sentencer) {Sentencer};
+    \node[align=center] [block,right of=sentencer] (analizator) {Analizator\\morfologiczny};
+    \node[align=center] [block,right of=analizator] (reg-pewne) {Reguły\\bezpieczne};
+    \node[align=center] [block,below of=reg-pewne] (phras) {Moduł\\kolokacyjny};
+    \node[align=center] [block,left of=phras] (reg-heur)
+    {Reguły\\heurystyczne};
+    \node[align=center] [block,left of=reg-heur] (tager) {Tager\\
+      statystyczny};
+    \node [tekst,left of=tager] (analiza) {Analiza};
+    \path [line,decorate, decoration=snake] (tekst) -- (sentencer);
+    \path [line] (sentencer) -- (analizator);
+    \path [line] (analizator) -- (reg-pewne);
+    \path [line] (reg-pewne) edge [loop above] ();
+    \path [line] (reg-heur) edge [bend right=30] (reg-pewne);
+    \path [line] (reg-pewne) edge [bend right=30] (reg-heur);
+    \path [line] (reg-pewne) -- (phras);
+    \path [line] (phras) edge [bend right=65] (reg-pewne);
+    \path [line] (reg-heur) -- (tager);
+    \path [line,decorate, decoration=snake] (tager) -- (analiza);
+\end{tikzpicture}
+\framebreak
+
+Komponenty:
+\begin{itemize}
+\item obszerny słownik (ok. 800 000 haseł, w~tym ok. 200 000 nazw własnych),
+\item duży zestaw reguł (ok. 2600) tworzonych ręcznie w~formalizmie \emph{LanGr},
+\item moduł kolokacyjny \emph{Phras},
+\item analizatory statystyczne \emph{MorČe} i~\emph{MorphoDiTa}.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Możliwe zastępniki}
+
+Polskie zasoby, które (potencjalnie) można wykorzystać:
+\begin{itemize}
+\item \href{http://sgjp.pl/}{SGJP} (ew. Polimorf), być może rozszerzony o~więcej nazw
+  własnych, np. wszystkie nazwiska z~bazy PESEL,
+\item Spejd,
+\item \emph{Słownik elektroniczny jednostek frazeologicznych} (\href{http://zil.ipipan.waw.pl/SEJF}{SEJF}),
+\item \emph{Słownik paradygmatów polskich frazeologizmów czasownikowych} (\href{http://uwm.edu.pl/verbel/}{VERBEL}),
+\item być może również ramki frazeologiczne Walentego (?),
+\item omówione wcześniej tagery statystyczne.
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}%[allowframebreaks]
+  \frametitle{SEJF}
+
+\begin{tikzpicture}[node distance=3.8cm,auto]
+  \tikzstyle{block} = [rectangle, draw, thick, fill=gray!20,
+  text centered, rounded corners, minimum height=2em, minimum width=2.5em]
+  \tikzstyle{dot} = [circle,draw,fill=black,inner sep=0pt,minimum size=8pt]
+  \tikzstyle{triangle} = [regular polygon,regular polygon sides=3,draw,fill=white,rotate=30,thick,inner sep=0pt,minimum size=8pt]
+  \tikzstyle{line} = [thick, draw]
+\node (0) at (-1.3,1) {};
+\node [triangle] (tri) at (-.5,1) {};
+\node [block] (1) at (2,1) {\texttt{<\$1:Case=\$c;Nb:\$n>}};
+\node [block] (2) at (5,1) {\texttt{<\$2>}};
+\node [block] (3) at (6.7,1) {\texttt{<\$3>}};
+\node [dot] (4) at (8,1) {};
+\path [line] (0) -- (tri);
+\path [line] (tri) -- (1);
+\path [line] (1) -- (2);
+\path [line] (2) -- (3);
+\path [line] (3) -- (4);
+%\draw (t1) -- (t2) -- (t3) -- (t4);
+\end{tikzpicture}
+
+\[\scriptsize
+\underbrace{\text{akt
+    \texttt{[akt:subst:sg:nom:m3]}}}_{\text{\$1}}\underbrace{\phantom{Fg}}_{\text{\$2}}
+\underbrace{\text{oskarżenia \texttt{[oskarżenie:subst:sg:gen:n2]}}}_{\text{\$3}}
+\]
+
+Przykładowe zastosowanie:
+\begin{itemize}
+%Pantera:\\
+\item (...) skierowano do sądu \textbf{akt} \texttt{\small[akta:subst:pl:gen:n]} oskarżenia.
+
+%WMBT
+\item (...)
+%listu gończego dołącza się
+odpisy aktu \textbf{oskarżenia} \texttt{\small [ger:sg:gen:n:perf:aff]} (...)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{SEJF}
+W~NKJP300 jest 4116 ciągów pasujących do zapytania
+\texttt{[base\textapprox "akt"] [base\textapprox "oskarżenie"]}. Ale tylko 2182 spełnia
+warunki nałożone na to wyrażenie w~SEJF-ie. Reszta to błędy, zwykle
+polegające na wyborze rzeczownika \textsc{akta}.
+
+\bigskip
+\pause
+
+Podobnie dla \texttt{[base\textapprox"armia"] [base\textapprox"czerwony"]} --- 1983
+wyników, ale tylko 120 spełnia ograniczenia SEJF-u. Reszta to
+w~większości błędy polegające na wyborze rzeczownika
+\textsc{czerwona}.
+
+\bigskip
+\pause
+
+Dla ciągu \texttt{[base\textapprox"brud"] [base=","]
+  [base\textapprox"smród"] [base="i"] [base\textapprox"ubóstwo"]}
+Pantera uparcie wybiera rzeczownik \textsc{smród} \textsc{m1}. Jedyne
+poprawne dopasowanie jest w~dopełniaczu.
+
+\end{frame}
+
+
+\section{Dyskusja i rekomendacje}
+\frame{\sectionpage}
+
+\begin{frame}
+  \frametitle{Możliwe ulepszenia}
+
+  \begin{itemize}
+  \item Uspójnienie korpusu treningowego ze słownikiem.
+  \item Zwiększenie ilości danych treningowych.
+  \item Rozszerzanie słownika o~nazwy własne.
+  \item Wykorzystanie dodatkowej informacji słownikowej
+    (kwalifikatory, pospolitość).
+  \item Wykorzystanie innych zasobów lingwistycznych obejmujących
+    np. frazeologię.
+  \item Zastosowanie ręcznie pisanych reguł \pauza przynajmniej do
+    kontroli jakości znakowania.
+  \end{itemize}
+
+
+\end{frame}
+
+
 \begin{frame}{Struktura danych treningowych w NKJP1M}
-  TODO
+
+% Tutaj powiem dwa słowa o~tym, że inne tagery są trenowane na
+% bardziej jednolitych tekstach i~że można spróbować eksperymentów
+% z~trenowaniem bez internetów i~podkorpusu mówionego.
+
+  \begin{center}
+    \includegraphics[scale=0.7]{img/nkjp1m.png}
+  \end{center}
+
+
 \end{frame}
 
 \begin{frame}{Podsumowanie}
   \structure{Cechy pożądanego tagera (M. Woliński)}
   \vspace{0.5cm}
 
-  TODO Chciałbym tager, który:
+  Chciałbym tager, który:
    \begin{itemize}
-   \item nie jest nadgorliwy, można kazać zostawić interpretacje częściowo nieujednoznacznione (np. usunąć tylko bardzo złe interpretacje),
-   obecnie: każdy
-   \item informuje o~poziomie pewności podjętych decyzji,
-   obecnie: Concraft, możliwe: WCRFT, WMBT
-   \item działa na niejednoznacznej segmentacji (stworzonej przez Morfeusza lub np. będącej wynikiem zastosowania po Morfeuszu słownika wyrażeń wieloczłonowych),
-   obecnie: tylko tagset pośredni, możliwe: w każdym po modyfikacjach całego stosu
+   \item<1-> nie jest nadgorliwy, można kazać zostawić interpretacje częściowo nieujednoznacznione (np. usunąć tylko bardzo złe interpretacje),\\
+   \alert{obecnie: Pantera, Concraft; po zmianie parametru: WCRFT, WMBT,}
+   \item<2-> informuje o~poziomie pewności podjętych decyzji,\\
+   \alert{obecnie: Concraft, możliwe: WCRFT, WMBT; trudniejsze dla Pantery}
+   \item<3-> działa na niejednoznacznej segmentacji (stworzonej przez Morfeusza lub np. będącej wynikiem zastosowania po Morfeuszu słownika wyrażeń wieloczłonowych),\\
+   \alert{obecnie: tylko tagset pośredni, możliwe: w każdym po modyfikacjach całego stosu,}
    \end{itemize}
 \end{frame}
 
@@ -814,12 +1294,12 @@ inner sep=0pt,minimum size=4mm}]
   \structure{Cechy pożądanego tagera (M. Woliński)}
   \vspace{0.5cm}
 
-  TODO Chciałbym tager, który:
+  Chciałbym tager, który:
    \begin{itemize}
-    \item daje się (względnie?) łatwo zainstalować i uruchomić na wszystkich platformach, na których jest Morfeusz,
-    obecnie: ograniczeniem jest Maca
-    \item da się rozszerzyć o uwzględnianie informacji o czasie powstania tekstu.
-    obecnie: żaden, możliwe: w każdym jako cecha ML
+    \item<1-> daje się (względnie?) łatwo zainstalować i uruchomić na wszystkich platformach, na których jest Morfeusz,\\
+    \alert{obecnie: żaden; trzeba przygotować dystrybucję binarną Macy pod Windows; Haskell Platform + Concraft lub kompilacja innych tagerów,}
+    \item<2-> da się rozszerzyć o uwzględnianie informacji o czasie powstania tekstu,\\
+    \alert{obecnie: żaden, możliwe: w opartych na ML jako dodatkowa cecha.}
   \end{itemize}
 \end{frame}
 
